@@ -32,12 +32,10 @@
     
         <div class="class-description"><p>The Pointable class reports the physical characteristics of a detected
 finger or tool.</p>
-
 <p>Both fingers and tools are classified as Pointable objects. Use the
 Pointable.tool property to determine whether a Pointable object represents a
 tool or finger. The Leap classifies a detected entity as a tool when it is
 thinner, straighter, and longer than a typical finger.</p>
-
 <p>Note that Pointable objects can be invalid, which means that they do not
 contain valid tracking data and do not correspond to a physical entity.
 Invalid Pointable objects can be the result of asking for a Pointable object
@@ -64,7 +62,6 @@ property.</p></div>
     
     <div class="description">
         <p>Constructs a Pointable object.</p>
-
 <p>An uninitialized pointable is considered invalid.
 Get valid Pointable objects from a Frame or a Hand object.</p>
     </div>
@@ -112,6 +109,10 @@ Get valid Pointable objects from a Frame or a Hand object.</p>
 
     
     
+
+    
+
+    
     
     
     
@@ -147,13 +148,24 @@ Get valid Pointable objects from a Frame or a Hand object.</p>
     
     <div class="description">
         <p>An invalid Pointable object.</p>
-
 <p>You can use this Pointable instance in comparisons testing
 whether a given Pointable instance is valid or invalid. (You can also use the
 Pointable.valid property.)</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Pointable.html">Pointable</a></span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -177,7 +189,7 @@ Pointable.valid property.)</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        pointable.js, line 121
+        pointable.js, line 118
     </li></ul></dd>
     
     
@@ -195,7 +207,7 @@ Pointable.valid property.)</p>
         
             
 <dt>
-    <h4 class="name" id="direction {Array: [x,y,z]}"><span class="type-signature"></span>direction {Array: [x,y,z]}<span class="type-signature"></span></h4>
+    <h4 class="name" id="direction"><span class="type-signature"></span>direction<span class="type-signature"> :Vector</span></h4>
     
     
 </dt>
@@ -203,14 +215,24 @@ Pointable.valid property.)</p>
     
     <div class="description">
         <p>The direction in which this finger or tool is pointing.</p>
-
 <p>The direction is expressed as a unit vector pointing in the same
 direction as the tip.</p>
-
-<p><img src="images/Leap_Finger_Model.png"/></p>
+<p>&lt;img src=&quot;images/Leap_Finger_Model.png&quot;/&gt;</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Vector</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -252,7 +274,7 @@ direction as the tip.</p>
         
             
 <dt>
-    <h4 class="name" id="id {String}"><span class="type-signature"></span>id {String}<span class="type-signature"></span></h4>
+    <h4 class="name" id="id"><span class="type-signature"></span>id<span class="type-signature"> :String</span></h4>
     
     
 </dt>
@@ -264,13 +286,24 @@ same across consecutive frames while the tracked finger or tool remains
 visible. If tracking is lost (for example, when a finger is occluded by
 another finger or when it is withdrawn from the Leap field of view), the
 Leap may assign a new ID when it detects the entity in a future frame.</p>
-
 <p>Use the ID value with the pointable() functions defined for the
 <a href="Frame.html">Frame</a> and Frame.Hand classes to find this
 Pointable object in future frames.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -312,7 +345,7 @@ Pointable object in future frames.</p>
         
             
 <dt>
-    <h4 class="name" id="length {Number}"><span class="type-signature"></span>length {Number}<span class="type-signature"></span></h4>
+    <h4 class="name" id="length"><span class="type-signature"></span>length<span class="type-signature"> :Number</span></h4>
     
     
 </dt>
@@ -320,12 +353,23 @@ Pointable object in future frames.</p>
     
     <div class="description">
         <p>The estimated length of the finger or tool in millimeters.</p>
-
 <p>The reported length is the visible length of the finger or tool from the
 hand to tip. If the length isn't known, then a value of 0 is returned.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -367,7 +411,7 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
         
             
 <dt>
-    <h4 class="name" id="tipPosition {Array: [x,y,z]}"><span class="type-signature"></span>tipPosition {Array: [x,y,z]}<span class="type-signature"></span></h4>
+    <h4 class="name" id="tipPosition"><span class="type-signature"></span>tipPosition<span class="type-signature"> :Vector</span></h4>
     
     
 </dt>
@@ -378,6 +422,18 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Vector</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -419,7 +475,7 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
         
             
 <dt>
-    <h4 class="name" id="tipVelocity {Array: [Vx,Vy,Vz]}"><span class="type-signature"></span>tipVelocity {Array: [Vx,Vy,Vz]}<span class="type-signature"></span></h4>
+    <h4 class="name" id="tipVelocity"><span class="type-signature"></span>tipVelocity<span class="type-signature"> :Vector</span></h4>
     
     
 </dt>
@@ -430,6 +486,18 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Vector</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -471,7 +539,7 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
         
             
 <dt>
-    <h4 class="name" id="tool {Boolean}"><span class="type-signature"></span>tool {Boolean}<span class="type-signature"></span></h4>
+    <h4 class="name" id="tool"><span class="type-signature"></span>tool<span class="type-signature"> :Boolean</span></h4>
     
     
 </dt>
@@ -480,11 +548,22 @@ hand to tip. If the length isn't known, then a value of 0 is returned.</p>
     <div class="description">
         <p>Whether or not the Pointable is believed to be a tool.
 Tools are generally longer, thinner, and straighter than fingers.</p>
-
 <p>If tool is false, then this Pointable must be a finger.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Boolean</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -526,7 +605,7 @@ Tools are generally longer, thinner, and straighter than fingers.</p>
         
             
 <dt>
-    <h4 class="name" id="valid {Boolean}"><span class="type-signature"></span>valid {Boolean}<span class="type-signature"></span></h4>
+    <h4 class="name" id="valid"><span class="type-signature"></span>valid<span class="type-signature"> :Boolean</span></h4>
     
     
 </dt>
@@ -537,6 +616,18 @@ Tools are generally longer, thinner, and straighter than fingers.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Boolean</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -578,7 +669,7 @@ Tools are generally longer, thinner, and straighter than fingers.</p>
         
             
 <dt>
-    <h4 class="name" id="width {Number}"><span class="type-signature"></span>width {Number}<span class="type-signature"></span></h4>
+    <h4 class="name" id="width"><span class="type-signature"></span>width<span class="type-signature"> :Number</span></h4>
     
     
 </dt>
@@ -586,15 +677,25 @@ Tools are generally longer, thinner, and straighter than fingers.</p>
     
     <div class="description">
         <p>The estimated width of the tool in millimeters.</p>
-
 <p>The reported width is the average width of the visible portion of the
 tool from the hand to the tip. If the width isn't known,
 then a value of 0 is returned.</p>
-
 <p>Pointable objects representing fingers do not have a width property.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -684,7 +785,7 @@ object.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        pointable.js, line 104
+        pointable.js, line 103
     </li></ul></dd>
     
     
@@ -696,6 +797,10 @@ object.</p>
 </dl>
 
     
+    
+
+    
+
     
     
     
@@ -749,9 +854,10 @@ object.</p>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri Mar 01 2013 18:36:19 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Sat Apr 27 2013 19:56:53 GMT-0500 (CDT)
 </footer>
 
 <script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

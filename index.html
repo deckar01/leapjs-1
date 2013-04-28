@@ -42,111 +42,87 @@
 
     <section>
         <article><h1>LeapJS</h1>
-
-<p>Welcome to the Leap JavaScript framework. This is intended for use with the Leap (<a href='https://www.leapmotion.com/'>https://www.leapmotion.com/</a>).</p>
-
+<p>Welcome to the Leap JavaScript framework. This is intended for use with the Leap (<a href="https://www.leapmotion.com/">https://www.leapmotion.com/</a>).</p>
+<p><a href="https://travis-ci.org/leapmotion/leapjs"><img src="https://travis-ci.org/leapmotion/leapjs.png" alt="Build Status"></a></p>
 <h2>Installation</h2>
-
 <p>If you're using npm, you can use <code>npm install leapjs</code>.</p>
-
 <h2>Usage</h2>
-
-<p>LeapJS works from with Node.js or your browser.</p>
-
+<p>LeapJS works with Node.js or your browser.</p>
 <h3>From the browser</h3>
-
 <p>Include the leap.js script included at the root of this package, or, use the minified version provided at leap.min.js.</p>
-
-<div class="highlight"><pre lang="html">
-<script src="./leap.min.js"></script>
-
-</pre></div>
-
+<pre><code class="lang-html">&lt;script src=&quot;./leap.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 <h3>From node</h3>
-
 <p>Use the following:</p>
-
-<div class="highlight"><pre lang="javascript">var Leap = require('leapjs').Leap
-</pre></div>
-
+<pre><code class="lang-javascript">var Leap = require('leapjs').Leap</code></pre>
 <h3>Getting frames</h3>
-
 <p>To listen to the frame events, you can use the friendly <code>Leap.loop</code> function.
 This will auto-detect which type of event loop you can accept, and, call your callback with frames.</p>
-
-<div class="highlight"><pre lang="javascript">Leap.loop(function(frame) {
+<pre><code class="lang-javascript">Leap.loop(function(frame) {
   // ... your code here
-})
-</pre></div>
-
+})</code></pre>
 <p>As well, you can call a special version of <code>Leap.loop</code> where you provide a second argument to the callback.
 This allows you to wait until you're ready to receieve further frame events. Here is an exmaple of
 this approach.</p>
-
-<div class="highlight"><pre lang="javascript">Leap.loop(function(frame, done) {
-  // do somethings
+<pre><code class="lang-javascript">Leap.loop(function(frame, done) {
+  // do things
   done() // if you don't invoke this, you won't get more events
-})
-</pre></div>
-
+})</code></pre>
+<h3>Options</h3>
+<p>The controller supports several options.</p>
+<ul>
+<li><code>host</code> – The host used by the WebSocket connection, default is <code>&quot;127.0.0.1&quot;</code></li>
+<li><code>port</code> – The port used by the WebSocket connection, default is <code>6437</code></li>
+<li><code>enableGestures</code> – Enabled or disabled gesture recognition for this controller, default is <code>false</code></li>
+<li><code>frameEventName</code> – The name of the frame event to pass through as a <code>frame</code> event. This auto-detects which type of frame event to use.</li>
+</ul>
+<h4>Passing options</h4>
+<p>Using the <code>loop</code> method, you can pass in options in the following way:</p>
+<pre><code class="lang-javascript">Leap.loop({enableGestures: true}, {
+  // do things
+});</code></pre>
+<p>To pass in options when constructing the controller, do the following:</p>
+<pre><code class="lang-javascript">var controller = new Leap.Controller({enableGestures: true});</code></pre>
 <h3>Internals of the event loop</h3>
-
 <p>Leap.loop attempts to pick the right event loop to use. Within the
 background page of a Chrome extension, Chrome will not use the <code>animationFrame</code> loop. As well,
 in Node.js no animation event exists.</p>
-
 <p>In general, browsers optimize the load of requestAnimationFrame based on load, element visibility,
 battery status, etc. Chrome has chosen to optimize this by omitting the functionality
 altogether in the background.js of its extensions.</p>
-
 <p>To manually pick the event type you'd like to use, create a leap controller and listen for the appropriate event
 type, either <code>frame</code> or <code>animationFrame</code>.</p>
-
 <h3>Picking your own event type</h3>
-
-<div class="highlight"><pre lang="javascript">var controller = new Leap.Controller();
+<pre><code class="lang-javascript">var controller = new Leap.Controller();
 
 // for the frame event
 controller.on('frame', function() {
-  console.log("hello frame")
+  console.log(&quot;hello frame&quot;)
 })
 
 // for the animationFrame event. this is only supported from within the browser
 controller.on('animationFrame', function() {
-  console.log("hello frame")
+  console.log(&quot;hello frame&quot;)
 })
-controller.connect()
-</pre></div>
-
+controller.connect()</code></pre>
 <h2>Examples</h2>
-
 <p>Inside the examples directory are a few great examples. To get them running, do the following:</p>
-
 <ul>
 <li>Run <code>npm install</code></li>
 <li>Run <code>make serve</code></li>
-<li>Point your browser at <a href='http://localhost:8080/examples'>http://localhost:8080/examples</a> and enjoy</li>
+<li>Point your browser at <a href="http://localhost:8080/examples">http://localhost:8080/examples</a> and enjoy</li>
 </ul>
-
 <h3>Node.js example</h3>
-
 <p>To run the node.js example, run <code>node exmaples/node.js</code>.</p>
-
 <h2>Development</h2>
-
 <p>You can build your own leap.js file by using <code>make build</code>. If you're doing any amount of development, you'll find it
 convenient to run <code>make watch</code>. This takes care of building leap.js for you on every edit. As well, you can both
 watch and running <code>make watch-test</code>.</p>
-
 <h2>Tests</h2>
-
 <p>There are currently rudamentary tests. To get them running, do the following:</p>
-
 <ul>
 <li>Run <code>npm install</code></li>
 <li>Run <code>make test</code></li>
 </ul>
-
 <p>Or use make watch-test as noted above.</p></article>
     </section>
 
@@ -164,9 +140,10 @@ watch and running <code>make watch-test</code>.</p>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri Mar 01 2013 18:36:19 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Sat Apr 27 2013 19:56:52 GMT-0500 (CDT)
 </footer>
 
 <script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

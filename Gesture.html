@@ -31,44 +31,34 @@
     </h2>
     
         <div class="class-description"><p>The Gesture class represents a recognized movement by the user.</p>
-
 <p>The Leap watches the activity within its field of view for certain movement
 patterns typical of a user gesture or command. For example, a movement from side to
 side with the hand can indicate a swipe gesture, while a finger poking forward
 can indicate a screen tap gesture.</p>
-
 <p>When the Leap recognizes a gesture, it assigns an ID and adds a
 Gesture object to the frame gesture list. For continuous gestures, which
 occur over many frames, the Leap updates the gesture by adding
 a Gesture object having the same ID and updated properties in each
 subsequent frame.</p>
-
-<p><strong>Important:</strong> Recognition for each type of gesture must be enabled; 
+<p><strong>Important:</strong> Recognition for each type of gesture must be enabled;
 otherwise <strong>no gestures are recognized or reported</strong>.</p>
-
 <p>Subclasses of Gesture define the properties for the specific movement patterns
 recognized by the Leap.</p>
-
 <p>The Gesture subclasses for include:</p>
-
 <ul>
 <li>CircleGesture -- A circular movement by a finger.</li>
 <li>SwipeGesture -- A straight line movement by the hand with fingers extended.</li>
 <li>ScreenTapGesture -- A forward tapping movement by a finger.</li>
 <li>KeyTapGesture -- A downward tapping movement by a finger.</li>
 </ul>
-
 <p>Circle and swipe gestures are continuous and these objects can have a
 state of start, update, and stop.</p>
-
 <p>The screen tap gesture is a discrete gesture. The Leap only creates a single
 ScreenTapGesture object appears for each tap and it always has a stop state.</p>
-
 <p>Get valid Gesture instances from a Frame object. You can get a list of gestures
-from the Frame gestures array. You can also use the Frame gesture() method 
-to find a gesture in the current frame using an ID value obtained in a 
+from the Frame gestures array. You can also use the Frame gesture() method
+to find a gesture in the current frame using an ID value obtained in a
 previous frame.</p>
-
 <p>Gesture objects can be invalid. For example, when you get a gesture by ID
 using Frame.gesture(), and there is no gesture with that ID in the current
 frame, then gesture() returns an Invalid Gesture object (rather than a null
@@ -93,7 +83,6 @@ invalid.</p></div>
     
     <div class="description">
         <p>Constructs a new Gesture object.</p>
-
 <p>An uninitialized Gesture object is considered invalid. Get valid instances
 of the Gesture class, which will be one of the Gesture subclasses, from a
 Frame object.</p>
@@ -129,7 +118,7 @@ Frame object.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 1
+        gesture.js, line 3
     </li></ul></dd>
     
     
@@ -141,6 +130,10 @@ Frame object.</p>
 </dl>
 
     
+    
+
+    
+
     
     
     
@@ -178,7 +171,6 @@ Frame object.</p>
     <div class="description">
         <p>The elapsed duration of the recognized movement up to the
 frame containing this Gesture object, in microseconds.</p>
-
 <p>The duration reported for the first Gesture in the sequence (with the
 start state) will typically be a small positive number since
 the movement must progress far enough for the Leap to recognize it as
@@ -186,6 +178,18 @@ an intentional gesture.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -209,7 +213,7 @@ an intentional gesture.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 100
+        gesture.js, line 102
     </li></ul></dd>
     
     
@@ -235,11 +239,22 @@ an intentional gesture.</p>
     
     <div class="description">
         <p>The list of hands associated with this Gesture, if any.</p>
-
 <p>If no hands are related to this gesture, the list is empty.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -263,7 +278,7 @@ an intentional gesture.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 82
+        gesture.js, line 84
     </li></ul></dd>
     
     
@@ -289,13 +304,24 @@ an intentional gesture.</p>
     
     <div class="description">
         <p>The gesture ID.</p>
-
 <p>All Gesture objects belonging to the same recognized movement share the
 same ID value. Use the ID value with the Frame::gesture() method to
 find updates related to this Gesture object in subsequent frames.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -319,7 +345,7 @@ find updates related to this Gesture object in subsequent frames.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 71
+        gesture.js, line 73
     </li></ul></dd>
     
     
@@ -345,11 +371,22 @@ find updates related to this Gesture object in subsequent frames.</p>
     
     <div class="description">
         <p>The list of fingers and tools associated with this Gesture, if any.</p>
-
 <p>If no Pointable objects are related to this gesture, the list is empty.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -373,7 +410,7 @@ find updates related to this Gesture object in subsequent frames.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 91
+        gesture.js, line 93
     </li></ul></dd>
     
     
@@ -399,13 +436,10 @@ find updates related to this Gesture object in subsequent frames.</p>
     
     <div class="description">
         <p>The gesture ID.</p>
-
 <p>Recognized movements occur over time and have a beginning, a middle,
 and an end. The 'state()' attribute reports where in that sequence this
 Gesture object falls.</p>
-
 <p>Possible values for the state field are:</p>
-
 <ul>
 <li>start</li>
 <li>update</li>
@@ -414,6 +448,18 @@ Gesture object falls.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -437,7 +483,7 @@ Gesture object falls.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 113
+        gesture.js, line 115
     </li></ul></dd>
     
     
@@ -463,9 +509,7 @@ Gesture object falls.</p>
     
     <div class="description">
         <p>The gesture type.</p>
-
 <p>Possible values for the type field are:</p>
-
 <ul>
 <li>circle</li>
 <li>swipe</li>
@@ -475,6 +519,18 @@ Gesture object falls.</p>
     </div>
     
     
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
+    
+
     
 <dl class="details">
     
@@ -498,7 +554,7 @@ Gesture object falls.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        gesture.js, line 130
+        gesture.js, line 132
     </li></ul></dd>
     
     
@@ -537,9 +593,10 @@ Gesture object falls.</p>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri Mar 01 2013 18:36:19 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Sat Apr 27 2013 19:56:52 GMT-0500 (CDT)
 </footer>
 
 <script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>
