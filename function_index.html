@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>leapjs Documentation</title>
+	</head>
+	<body id="overview">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="function_index.html">Methods</a></li>
+	
+	
+	
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="title">
+	
+  <span class="jumbo">
+		LeapJS API Reference
+  </span>
+		
+</div>
+
+
+				<h1>Function</h1>
+			</div>
+		</header>
+		<div class="content">
+			<table>
+				<tbody>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#dump">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#dump">
+								<strong><a href="Frame.html#dump" ><abbr title="Frame#dump">dump</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Returns a JSON-formatted string containing the hands, pointables and gestures</td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno370">frame.js</a> at line 370
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#finger">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#finger">
+								<strong><a href="Frame.html#finger" ><abbr title="Frame#finger">finger</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The finger with the specified ID in this frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno186">frame.js</a> at line 186
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#finger">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#finger">
+								<strong><a href="Hand.html#finger" ><abbr title="Hand#finger">finger</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The finger with the specified ID attached to this hand.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno143">hand.js</a> at line 143
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Controller#frame">
+								<a href="Controller.html" ><abbr title="Controller">Controller</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Controller#frame">
+								<strong><a href="Controller.html#frame" ><abbr title="Controller#frame">frame</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Returns a frame of tracking data from the Leap.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_controller_js.html#lineno94">controller.js</a> at line 94
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#hand">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#hand">
+								<strong><a href="Frame.html#hand" ><abbr title="Frame#hand">hand</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The Hand object with the specified ID in this frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno210">frame.js</a> at line 210
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.loop">
+								Leap.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.loop">
+								<strong><a href="Leap.html#loop" ><abbr title="Leap.loop">loop</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The Leap.loop() function passes a frame of Leap data to your</td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_index_js.html#lineno13">index.js</a> at line 13
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#pointable">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#pointable">
+								<strong><a href="Frame.html#pointable" ><abbr title="Frame#pointable">pointable</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The Pointable object with the specified ID in this frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno163">frame.js</a> at line 163
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#rotationAngle">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#rotationAngle">
+								<strong><a href="Frame.html#rotationAngle" ><abbr title="Frame#rotationAngle">rotationAngle</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The angle of rotation around the rotation axis derived from the overall </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno232">frame.js</a> at line 232
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#rotationAngle">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#rotationAngle">
+								<strong><a href="Hand.html#rotationAngle" ><abbr title="Hand#rotationAngle">rotationAngle</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The angle of rotation around the rotation axis derived from the change in </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno168">hand.js</a> at line 168
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#rotationAxis">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#rotationAxis">
+								<strong><a href="Frame.html#rotationAxis" ><abbr title="Frame#rotationAxis">rotationAxis</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The axis of rotation derived from the overall rotational motion between </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno260">frame.js</a> at line 260
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#rotationAxis">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#rotationAxis">
+								<strong><a href="Hand.html#rotationAxis" ><abbr title="Hand#rotationAxis">rotationAxis</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The axis of rotation derived from the change in orientation of this hand, and </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno198">hand.js</a> at line 198
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#rotationMatrix">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#rotationMatrix">
+								<strong><a href="Frame.html#rotationMatrix" ><abbr title="Frame#rotationMatrix">rotationMatrix</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The transform matrix expressing the rotation derived from the overall </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno286">frame.js</a> at line 286
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#rotationMatrix">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#rotationMatrix">
+								<strong><a href="Hand.html#rotationMatrix" ><abbr title="Hand#rotationMatrix">rotationMatrix</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The transform matrix expressing the rotation derived from the change in </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno224">hand.js</a> at line 224
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#scaleFactor">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#scaleFactor">
+								<strong><a href="Frame.html#scaleFactor" ><abbr title="Frame#scaleFactor">scaleFactor</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The scale factor derived from the overall motion between the current frame and the specified frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno310">frame.js</a> at line 310
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#scaleFactor">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#scaleFactor">
+								<strong><a href="Hand.html#scaleFactor" ><abbr title="Hand#scaleFactor">scaleFactor</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The scale factor derived from the hand's motion between the current frame and the specified frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno250">hand.js</a> at line 250
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#toString">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#toString">
+								<strong><a href="Frame.html#toString" ><abbr title="Frame#toString">toString</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>A string containing a brief, human readable description of the Frame object.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno357">frame.js</a> at line 357
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#toString">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#toString">
+								<strong><a href="Hand.html#toString" ><abbr title="Hand#toString">toString</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>A string containing a brief, human readable description of the Hand object.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno300">hand.js</a> at line 300
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Pointable#toString">
+								<a href="Pointable.html" ><abbr title="Pointable">Pointable</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Pointable#toString">
+								<strong><a href="Pointable.html#toString" ><abbr title="Pointable#toString">toString</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>A string containing a brief, human readable description of the Pointable</td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_pointable_js.html#lineno103">pointable.js</a> at line 103
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#tool">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#tool">
+								<strong><a href="Frame.html#tool" ><abbr title="Frame#tool">tool</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The tool with the specified ID in this frame.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno139">frame.js</a> at line 139
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Frame#translation">
+								<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Frame#translation">
+								<strong><a href="Frame.html#translation" ><abbr title="Frame#translation">translation</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The change of position derived from the overall linear motion between the </td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_frame_js.html#lineno331">frame.js</a> at line 331
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Hand#translation">
+								<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Hand#translation">
+								<strong><a href="Hand.html#translation" ><abbr title="Hand#translation">translation</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The change of position of this hand between the current frame and the specified frame</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_hand_js.html#lineno275">hand.js</a> at line 275
+							
+							</div> 
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+
+		<footer>
+	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:33:39 GMT-0600 (MDT)
+</footer>
+
+	</body>
+</html>

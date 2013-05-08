@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>leapjs Documentation</title>
+	</head>
+	<body id="overview">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="function_index.html">Methods</a></li>
+	
+	
+	
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="title">
+	
+  <span class="jumbo">
+		LeapJS API Reference
+  </span>
+		
+</div>
+
+
+				<div class="type">Index</div>
+
+				A&nbsp;B&nbsp;<a href="#letterC">C</a>&nbsp;<a href="#letterD">D</a>&nbsp;E&nbsp;<a href="#letterF">F</a>&nbsp;<a href="#letterG">G</a>&nbsp;<a href="#letterH">H</a>&nbsp;<a href="#letterI">I</a>&nbsp;J&nbsp;<a href="#letterK">K</a>&nbsp;<a href="#letterL">L</a>&nbsp;M&nbsp;N&nbsp;O&nbsp;<a href="#letterP">P</a>&nbsp;Q&nbsp;<a href="#letterR">R</a>&nbsp;<a href="#letterS">S</a>&nbsp;<a href="#letterT">T</a>&nbsp;U&nbsp;V&nbsp;W&nbsp;X&nbsp;Y&nbsp;Z&nbsp;
+			</div>
+		</header>
+
+		<div class="content">
+			
+			 
+			
+
+			<h2 id="letterC">
+				C
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="CircleGesture.html" ><abbr title="CircleGesture">CircleGesture</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The CircleGesture classes represents a circular finger movement.</p>
+<p>A circle movement is recognized when the tip of a finger draws a circle
+within the Leap field of view.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Circle.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use circle gestures in your application, you must enable
+recognition of the circle gesture. You can enable recognition when you create
+the Leap Controller or start the Leap.loop().</p>
+<p>   TODO</p>
+<p>Circle gestures are continuous. The CircleGesture objects for the gesture have
+three possible states:</p>
+<ul>
+<li>start -- The circle gesture has just started. The movement has
+progressed far enough for the recognizer to classify it as a circle.</li>
+<li>update -- The circle gesture is continuing.</li>
+<li>stop -- The circle gesture is finished.</li>
+</ul>
+				</dd>
+				
+				
+				<dt>
+				<a href="Controller.html" ><abbr title="Controller">Controller</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The Controller class is your main interface to the Leap Motion Controller.</p>
+<p>Create an instance of this Controller class to access frames of tracking data 
+and configuration information. Frame data can be polled at any time using the 
+<a href="Controller.html#frame">Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
+frame. Set the history parameter to a positive integer to access previous frames. 
+A controller stores up to 60 frames in its frame history.</p>
+<p>Polling is an appropriate strategy for applications which already have an 
+intrinsic update loop, such as a game.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterD">
+				D
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#dump" ><abbr title="Frame#dump">dump</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Returns a JSON-formatted string containing the hands, pointables and gestures
+in this frame.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterF">
+				F
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#finger" ><abbr title="Frame#finger">finger</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The finger with the specified ID in this frame.</p>
+<p>Use the Frame finger() function to retrieve the finger from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Finger object, but if no finger
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a finger is lost and subsequently
+regained, the new Pointable object representing that physical finger may have
+a different ID than that representing the finger in an earlier frame.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#finger" ><abbr title="Hand#finger">finger</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The finger with the specified ID attached to this hand.</p>
+<p>Use this function to retrieve a Pointable object representing a finger
+attached to this hand using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no finger
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that the ID values assigned to fingers persist across frames, but only
+until tracking of a particular finger is lost. If tracking of a finger is
+lost and subsequently regained, the new Finger object representing that
+finger may have a different ID than that representing the finger in an
+earlier frame.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The Frame class represents a set of hand and finger tracking data detected
+in a single frame.</p>
+<p>The Leap detects hands, fingers and tools within the tracking area, reporting
+their positions, orientations and motions in frames at the Leap frame rate.</p>
+<p>Access Frame objects using the <a href="Controller.html#frame">Controller#frame</a>() function.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Controller.html#frame" ><abbr title="Controller#frame">frame</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Controller.html" ><abbr title="Controller">Controller</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Returns a frame of tracking data from the Leap.</p>
+<p>Use the optional history parameter to specify which frame to retrieve. 
+Call frame() or frame(0) to access the most recent frame; call frame(1) to 
+access the previous frame, and so on. If you use a history value greater 
+than the number of stored frames, then the controller returns an invalid frame.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterG">
+				G
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Gesture.html" ><abbr title="Gesture">Gesture</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The Gesture class represents a recognized movement by the user.</p>
+<p>The Leap watches the activity within its field of view for certain movement
+patterns typical of a user gesture or command. For example, a movement from side to
+side with the hand can indicate a swipe gesture, while a finger poking forward
+can indicate a screen tap gesture.</p>
+<p>When the Leap recognizes a gesture, it assigns an ID and adds a
+Gesture object to the frame gesture list. For continuous gestures, which
+occur over many frames, the Leap updates the gesture by adding
+a Gesture object having the same ID and updated properties in each
+subsequent frame.</p>
+<p><strong>Important:</strong> Recognition for each type of gesture must be enabled;
+otherwise <strong>no gestures are recognized or reported</strong>.</p>
+<p>Subclasses of Gesture define the properties for the specific movement patterns
+recognized by the Leap.</p>
+<p>The Gesture subclasses for include:</p>
+<ul>
+<li>CircleGesture -- A circular movement by a finger.</li>
+<li>SwipeGesture -- A straight line movement by the hand with fingers extended.</li>
+<li>ScreenTapGesture -- A forward tapping movement by a finger.</li>
+<li>KeyTapGesture -- A downward tapping movement by a finger.</li>
+</ul>
+<p>Circle and swipe gestures are continuous and these objects can have a
+state of start, update, and stop.</p>
+<p>The screen tap gesture is a discrete gesture. The Leap only creates a single
+ScreenTapGesture object appears for each tap and it always has a stop state.</p>
+<p>Get valid Gesture instances from a Frame object. You can get a list of gestures
+from the Frame gestures array. You can also use the Frame gesture() method
+to find a gesture in the current frame using an ID value obtained in a
+previous frame.</p>
+<p>Gesture objects can be invalid. For example, when you get a gesture by ID
+using Frame.gesture(), and there is no gesture with that ID in the current
+frame, then gesture() returns an Invalid Gesture object (rather than a null
+value). Always check object validity in situations where a gesture might be
+invalid.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterH">
+				H
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The Hand class reports the physical characteristics of a detected hand.</p>
+<p>Hand tracking data includes a palm position and velocity; vectors for
+the palm normal and direction to the fingers; properties of a sphere fit
+to the hand; and lists of the attached fingers and tools.</p>
+<p>Note that Hand objects can be invalid, which means that they do not contain
+valid tracking data and do not correspond to a physical entity. Invalid Hand
+objects can be the result of asking for a Hand object using an ID from an
+earlier frame when no Hand objects with that ID exist in the current frame.
+A Hand object created from the Hand constructor is also invalid.
+Test for validity with the <a href="Hand.html#valid">Hand#valid</a> property.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#hand" ><abbr title="Frame#hand">hand</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The Hand object with the specified ID in this frame.</p>
+<p>Use the Frame hand() function to retrieve the Hand object from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Hand object, but if no hand
+with the specified ID is present, an invalid Hand object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a hand is lost and subsequently
+regained, the new Hand object representing that physical hand may have
+a different ID than that representing the physical hand in an earlier frame.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterI">
+				I
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#Invalid" ><abbr title="Frame.Invalid">Invalid</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 constant in <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>An invalid Frame object.</p>
+<p>You can use this invalid Frame in comparisons testing
+whether a given Frame instance is valid or invalid. (You can also check the
+<a href="Frame.html#valid">Frame#valid</a> property.)</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#Invalid" ><abbr title="Hand.Invalid">Invalid</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 constant in <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>An invalid Hand object.</p>
+<p>You can use an invalid Hand object in comparisons testing
+whether a given Hand instance is valid or invalid. (You can also use the
+Hand valid property.)</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Pointable.html#Invalid" ><abbr title="Pointable.Invalid">Invalid</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 constant in <a href="Pointable.html" ><abbr title="Pointable">Pointable</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>An invalid Pointable object.</p>
+<p>You can use this Pointable instance in comparisons testing
+whether a given Pointable instance is valid or invalid. (You can also use the
+Pointable.valid property.)</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterK">
+				K
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="KeyTapGesture.html" ><abbr title="KeyTapGesture">KeyTapGesture</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The KeyTapGesture class represents a tapping gesture by a finger or tool.</p>
+<p>A key tap gesture is recognized when the tip of a finger rotates down toward the
+palm and then springs back to approximately the original postion, as if
+tapping. The tapping finger must pause briefly before beginning the tap.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Tap.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use key tap gestures in your application, you must enable
+recognition of the key tap gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>Key tap gestures are discrete. The KeyTapGesture object representing a tap always
+has the state, STATE_STOP. Only one KeyTapGesture object is created for each
+key tap gesture recognized.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterL">
+				L
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.html#loop" ><abbr title="Leap.loop">loop</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					static public  method in class Leap
+				</em>
+				</dt>
+				<dd>
+					<p>The Leap.loop() function passes a frame of Leap data to your
+callback function and then calls window.requestAnimationFrame() after
+executing your callback function.</p>
+<p>Leap.loop() sets up the Leap controller and WebSocket connection for you.
+You do not need to create your own controller when using this method.</p>
+<p>Your callback function is called on an interval determined by the client
+browser. Typically, this is on an interval of 60 frames/second. The most
+recent frame of Leap data is passed to your callback function. If the Leap
+is producing frames at a slower rate than the browser frame rate, the same
+frame of Leap data can be passed to your function in successive animation
+updates.</p>
+<p>As an alternative, you can create your own Controller object and use a
+Controller#onFrame onFrame callback to process the data at
+the frame rate of the Leap device. See <a href="Controller.html">Controller</a> for an
+example.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterP">
+				P
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Pointable.html" ><abbr title="Pointable">Pointable</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The Pointable class reports the physical characteristics of a detected
+finger or tool.</p>
+<p>Both fingers and tools are classified as Pointable objects. Use the
+Pointable.tool property to determine whether a Pointable object represents a
+tool or finger. The Leap classifies a detected entity as a tool when it is
+thinner, straighter, and longer than a typical finger.</p>
+<p>Note that Pointable objects can be invalid, which means that they do not
+contain valid tracking data and do not correspond to a physical entity.
+Invalid Pointable objects can be the result of asking for a Pointable object
+using an ID from an earlier frame when no Pointable objects with that ID
+exist in the current frame. A Pointable object created from the Pointable
+constructor is also invalid. Test for validity with the Pointable.valid
+property.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#pointable" ><abbr title="Frame#pointable">pointable</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The Pointable object with the specified ID in this frame.</p>
+<p>Use the Frame pointable() function to retrieve the Pointable object from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no finger or tool
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a finger or tool is lost and subsequently
+regained, the new Pointable object representing that finger or tool may have
+a different ID than that representing the finger or tool in an earlier frame.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterR">
+				R
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#rotationAngle" ><abbr title="Frame#rotationAngle">rotationAngle</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The angle of rotation around the rotation axis derived from the overall 
+rotational motion between the current frame and the specified frame.</p>
+<p>The returned angle is expressed in radians measured clockwise around 
+the rotation axis (using the right-hand rule) between the start and end frames. 
+The value is always between 0 and pi radians (0 and 180 degrees).</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then the 
+angle of rotation is zero.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#rotationAngle" ><abbr title="Hand#rotationAngle">rotationAngle</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The angle of rotation around the rotation axis derived from the change in 
+orientation of this hand, and any associated fingers and tools, between the 
+current frame and the specified frame.</p>
+<p>The returned angle is expressed in radians measured clockwise around the 
+rotation axis (using the right-hand rule) between the start and end frames. 
+The value is always between 0 and pi radians (0 and 180 degrees).</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then the angle of rotation is zero.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#rotationAxis" ><abbr title="Frame#rotationAxis">rotationAxis</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The axis of rotation derived from the overall rotational motion between 
+the current frame and the specified frame.</p>
+<p>The returned direction vector is normalized.</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, or if no 
+rotation is detected between the two frames, a zero vector is returned.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#rotationAxis" ><abbr title="Hand#rotationAxis">rotationAxis</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The axis of rotation derived from the change in orientation of this hand, and 
+any associated fingers and tools, between the current frame and the specified frame.</p>
+<p>The returned direction vector is normalized.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then this method returns a zero vector.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#rotationMatrix" ><abbr title="Frame#rotationMatrix">rotationMatrix</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The transform matrix expressing the rotation derived from the overall 
+rotational motion between the current frame and the specified frame.</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then 
+this method returns an identity matrix.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#rotationMatrix" ><abbr title="Hand#rotationMatrix">rotationMatrix</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The transform matrix expressing the rotation derived from the change in 
+orientation of this hand, and any associated fingers and tools, between 
+the current frame and the specified frame.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then this method returns 
+an identity matrix.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterS">
+				S
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#scaleFactor" ><abbr title="Frame#scaleFactor">scaleFactor</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The scale factor derived from the overall motion between the current frame and the specified frame.</p>
+<p>The scale factor is always positive. A value of 1.0 indicates no scaling took place. 
+Values between 0.0 and 1.0 indicate contraction and values greater than 1.0 indicate expansion.</p>
+<p>The Leap derives scaling from the relative inward or outward motion of all 
+objects detected in the field of view (independent of translation and rotation).</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then this method returns 1.0.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#scaleFactor" ><abbr title="Hand#scaleFactor">scaleFactor</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The scale factor derived from the hand's motion between the current frame and the specified frame.</p>
+<p>The scale factor is always positive. A value of 1.0 indicates no scaling took place. 
+Values between 0.0 and 1.0 indicate contraction and values greater than 1.0 indicate expansion.</p>
+<p>The Leap derives scaling from the relative inward or outward motion of a hand 
+and its associated fingers and tools (independent of translation and rotation).</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either this frame or sinceFrame 
+are invalid Frame objects, then this method returns 1.0.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="ScreenTapGesture.html" ><abbr title="ScreenTapGesture">ScreenTapGesture</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The ScreenTapGesture class represents a tapping gesture by a finger or tool.</p>
+<p>A screen tap gesture is recognized when the tip of a finger pokes forward
+and then springs back to approximately the original postion, as if
+tapping a vertical screen. The tapping finger must pause briefly before beginning the tap.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Tap2.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use screen tap gestures in your application, you must enable
+recognition of the screen tap gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>ScreenTap gestures are discrete. The ScreenTapGesture object representing a tap always
+has the state, STATE_STOP. Only one ScreenTapGesture object is created for each
+screen tap gesture recognized.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="SwipeGesture.html" ><abbr title="SwipeGesture">SwipeGesture</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace null
+				</em>
+				</dt>
+				<dd>
+					<p>The SwipeGesture class represents a swiping motion of a finger or tool.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Swipe.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use swipe gestures in your application, you must enable
+recognition of the swipe gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>Swipe gestures are continuous.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterT">
+				T
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Frame.html#tool" ><abbr title="Frame#tool">tool</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The tool with the specified ID in this frame.</p>
+<p>Use the Frame tool() function to retrieve a tool from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no tool
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a tool is lost and subsequently
+regained, the new Pointable object representing that tool may have a
+different ID than that representing the tool in an earlier frame.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#toString" ><abbr title="Frame#toString">toString</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>A string containing a brief, human readable description of the Frame object.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#toString" ><abbr title="Hand#toString">toString</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>A string containing a brief, human readable description of the Hand object.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Pointable.html#toString" ><abbr title="Pointable#toString">toString</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Pointable.html" ><abbr title="Pointable">Pointable</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>A string containing a brief, human readable description of the Pointable
+object.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Frame.html#translation" ><abbr title="Frame#translation">translation</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The change of position derived from the overall linear motion between the 
+current frame and the specified frame.</p>
+<p>The returned translation vector provides the magnitude and direction of the 
+movement in millimeters.</p>
+<p>The Leap derives frame translation from the linear motion of all objects 
+detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then this 
+method returns a zero vector.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Hand.html#translation" ><abbr title="Hand#translation">translation</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The change of position of this hand between the current frame and the specified frame</p>
+<p>The returned translation vector provides the magnitude and direction of the 
+movement in millimeters.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either this frame or 
+sinceFrame are invalid Frame objects, then this method returns a zero vector.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		
+	</div>
+
+	<footer>
+	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:33:39 GMT-0600 (MDT)
+</footer>
+
+</body>
+</html>
