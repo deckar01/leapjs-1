@@ -102,6 +102,21 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The CircleGesture classes represents a circular finger movement.</p>
+<p>A circle movement is recognized when the tip of a finger draws a circle
+within the Leap field of view.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Circle.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use circle gestures in your application, you must enable
+recognition of the circle gesture. You can enable recognition when you create
+the Leap Controller or start the Leap.loop().</p>
+<p>   TODO</p>
+<p>Circle gestures are continuous. The CircleGesture objects for the gesture have
+three possible states:</p>
+<ul>
+<li>start -- The circle gesture has just started. The movement has
+progressed far enough for the recognizer to classify it as a circle.</li>
+<li>update -- The circle gesture is continuing.</li>
+<li>stop -- The circle gesture is finished.</li>
+</ul>
 						</td>
 					</tr>
 					
@@ -113,6 +128,13 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The Controller class is your main interface to the Leap Motion Controller.</p>
+<p>Create an instance of this Controller class to access frames of tracking data 
+and configuration information. Frame data can be polled at any time using the 
+<a href="Controller.html#frame">Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
+frame. Set the history parameter to a positive integer to access previous frames. 
+A controller stores up to 60 frames in its frame history.</p>
+<p>Polling is an appropriate strategy for applications which already have an 
+intrinsic update loop, such as a game.</p>
 						</td>
 					</tr>
 					
@@ -124,6 +146,10 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The Frame class represents a set of hand and finger tracking data detected
+in a single frame.</p>
+<p>The Leap detects hands, fingers and tools within the tracking area, reporting
+their positions, orientations and motions in frames at the Leap frame rate.</p>
+<p>Access Frame objects using the <a href="Controller.html#frame">Controller#frame</a>() function.</p>
 						</td>
 					</tr>
 					
@@ -135,6 +161,39 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The Gesture class represents a recognized movement by the user.</p>
+<p>The Leap watches the activity within its field of view for certain movement
+patterns typical of a user gesture or command. For example, a movement from side to
+side with the hand can indicate a swipe gesture, while a finger poking forward
+can indicate a screen tap gesture.</p>
+<p>When the Leap recognizes a gesture, it assigns an ID and adds a
+Gesture object to the frame gesture list. For continuous gestures, which
+occur over many frames, the Leap updates the gesture by adding
+a Gesture object having the same ID and updated properties in each
+subsequent frame.</p>
+<p><strong>Important:</strong> Recognition for each type of gesture must be enabled;
+otherwise <strong>no gestures are recognized or reported</strong>.</p>
+<p>Subclasses of Gesture define the properties for the specific movement patterns
+recognized by the Leap.</p>
+<p>The Gesture subclasses for include:</p>
+<ul>
+<li>CircleGesture -- A circular movement by a finger.</li>
+<li>SwipeGesture -- A straight line movement by the hand with fingers extended.</li>
+<li>ScreenTapGesture -- A forward tapping movement by a finger.</li>
+<li>KeyTapGesture -- A downward tapping movement by a finger.</li>
+</ul>
+<p>Circle and swipe gestures are continuous and these objects can have a
+state of start, update, and stop.</p>
+<p>The screen tap gesture is a discrete gesture. The Leap only creates a single
+ScreenTapGesture object appears for each tap and it always has a stop state.</p>
+<p>Get valid Gesture instances from a Frame object. You can get a list of gestures
+from the Frame gestures array. You can also use the Frame gesture() method
+to find a gesture in the current frame using an ID value obtained in a
+previous frame.</p>
+<p>Gesture objects can be invalid. For example, when you get a gesture by ID
+using Frame.gesture(), and there is no gesture with that ID in the current
+frame, then gesture() returns an Invalid Gesture object (rather than a null
+value). Always check object validity in situations where a gesture might be
+invalid.</p>
 						</td>
 					</tr>
 					
@@ -146,6 +205,15 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The Hand class reports the physical characteristics of a detected hand.</p>
+<p>Hand tracking data includes a palm position and velocity; vectors for
+the palm normal and direction to the fingers; properties of a sphere fit
+to the hand; and lists of the attached fingers and tools.</p>
+<p>Note that Hand objects can be invalid, which means that they do not contain
+valid tracking data and do not correspond to a physical entity. Invalid Hand
+objects can be the result of asking for a Hand object using an ID from an
+earlier frame when no Hand objects with that ID exist in the current frame.
+A Hand object created from the Hand constructor is also invalid.
+Test for validity with the <a href="Hand.html#valid">Hand#valid</a> property.</p>
 						</td>
 					</tr>
 					
@@ -157,6 +225,16 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The KeyTapGesture class represents a tapping gesture by a finger or tool.</p>
+<p>A key tap gesture is recognized when the tip of a finger rotates down toward the
+palm and then springs back to approximately the original postion, as if
+tapping. The tapping finger must pause briefly before beginning the tap.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Tap.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use key tap gestures in your application, you must enable
+recognition of the key tap gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>Key tap gestures are discrete. The KeyTapGesture object representing a tap always
+has the state, STATE_STOP. Only one KeyTapGesture object is created for each
+key tap gesture recognized.</p>
 						</td>
 					</tr>
 					
@@ -168,6 +246,18 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The Pointable class reports the physical characteristics of a detected
+finger or tool.</p>
+<p>Both fingers and tools are classified as Pointable objects. Use the
+Pointable.tool property to determine whether a Pointable object represents a
+tool or finger. The Leap classifies a detected entity as a tool when it is
+thinner, straighter, and longer than a typical finger.</p>
+<p>Note that Pointable objects can be invalid, which means that they do not
+contain valid tracking data and do not correspond to a physical entity.
+Invalid Pointable objects can be the result of asking for a Pointable object
+using an ID from an earlier frame when no Pointable objects with that ID
+exist in the current frame. A Pointable object created from the Pointable
+constructor is also invalid. Test for validity with the Pointable.valid
+property.</p>
 						</td>
 					</tr>
 					
@@ -179,6 +269,16 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The ScreenTapGesture class represents a tapping gesture by a finger or tool.</p>
+<p>A screen tap gesture is recognized when the tip of a finger pokes forward
+and then springs back to approximately the original postion, as if
+tapping a vertical screen. The tapping finger must pause briefly before beginning the tap.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Tap2.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use screen tap gestures in your application, you must enable
+recognition of the screen tap gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>ScreenTap gestures are discrete. The ScreenTapGesture object representing a tap always
+has the state, STATE_STOP. Only one ScreenTapGesture object is created for each
+screen tap gesture recognized.</p>
 						</td>
 					</tr>
 					
@@ -190,6 +290,11 @@ $(document).ready(function(){
 						</td>
 						<td>
 						  <p>The SwipeGesture class represents a swiping motion of a finger or tool.</p>
+<p>&lt;img src=&quot;images/Leap_Gesture_Swipe.png&quot;/&gt;</p>
+<p><strong>Important:</strong> To use swipe gestures in your application, you must enable
+recognition of the swipe gesture. You can enable recognition with:</p>
+<pre><code>TODO</code></pre>
+<p>Swipe gestures are continuous.</p>
 						</td>
 					</tr>
 					
@@ -199,7 +304,7 @@ $(document).ready(function(){
 		</div>
 
 		<footer>
-	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:33:39 GMT-0600 (MDT)
+	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:42:28 GMT-0600 (MDT)
 </footer>
 
 	</body>

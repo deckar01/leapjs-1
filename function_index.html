@@ -104,7 +104,8 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#dump" ><abbr title="Frame#dump">dump</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>Returns a JSON-formatted string containing the hands, pointables and gestures</td>
+						<td><p>Returns a JSON-formatted string containing the hands, pointables and gestures
+in this frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -125,7 +126,15 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#finger" ><abbr title="Frame#finger">finger</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The finger with the specified ID in this frame.</p></td>
+						<td><p>The finger with the specified ID in this frame.</p>
+<p>Use the Frame finger() function to retrieve the finger from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Finger object, but if no finger
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a finger is lost and subsequently
+regained, the new Pointable object representing that physical finger may have
+a different ID than that representing the finger in an earlier frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -146,7 +155,16 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#finger" ><abbr title="Hand#finger">finger</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The finger with the specified ID attached to this hand.</p></td>
+						<td><p>The finger with the specified ID attached to this hand.</p>
+<p>Use this function to retrieve a Pointable object representing a finger
+attached to this hand using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no finger
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that the ID values assigned to fingers persist across frames, but only
+until tracking of a particular finger is lost. If tracking of a finger is
+lost and subsequently regained, the new Finger object representing that
+finger may have a different ID than that representing the finger in an
+earlier frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -167,7 +185,11 @@ $(document).ready(function(){
 								<strong><a href="Controller.html#frame" ><abbr title="Controller#frame">frame</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>Returns a frame of tracking data from the Leap.</p></td>
+						<td><p>Returns a frame of tracking data from the Leap.</p>
+<p>Use the optional history parameter to specify which frame to retrieve. 
+Call frame() or frame(0) to access the most recent frame; call frame(1) to 
+access the previous frame, and so on. If you use a history value greater 
+than the number of stored frames, then the controller returns an invalid frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -188,7 +210,15 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#hand" ><abbr title="Frame#hand">hand</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The Hand object with the specified ID in this frame.</p></td>
+						<td><p>The Hand object with the specified ID in this frame.</p>
+<p>Use the Frame hand() function to retrieve the Hand object from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Hand object, but if no hand
+with the specified ID is present, an invalid Hand object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a hand is lost and subsequently
+regained, the new Hand object representing that physical hand may have
+a different ID than that representing the physical hand in an earlier frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -209,7 +239,21 @@ $(document).ready(function(){
 								<strong><a href="Leap.html#loop" ><abbr title="Leap.loop">loop</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The Leap.loop() function passes a frame of Leap data to your</td>
+						<td><p>The Leap.loop() function passes a frame of Leap data to your
+callback function and then calls window.requestAnimationFrame() after
+executing your callback function.</p>
+<p>Leap.loop() sets up the Leap controller and WebSocket connection for you.
+You do not need to create your own controller when using this method.</p>
+<p>Your callback function is called on an interval determined by the client
+browser. Typically, this is on an interval of 60 frames/second. The most
+recent frame of Leap data is passed to your callback function. If the Leap
+is producing frames at a slower rate than the browser frame rate, the same
+frame of Leap data can be passed to your function in successive animation
+updates.</p>
+<p>As an alternative, you can create your own Controller object and use a
+Controller#onFrame onFrame callback to process the data at
+the frame rate of the Leap device. See <a href="Controller.html">Controller</a> for an
+example.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -230,7 +274,15 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#pointable" ><abbr title="Frame#pointable">pointable</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The Pointable object with the specified ID in this frame.</p></td>
+						<td><p>The Pointable object with the specified ID in this frame.</p>
+<p>Use the Frame pointable() function to retrieve the Pointable object from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no finger or tool
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a finger or tool is lost and subsequently
+regained, the new Pointable object representing that finger or tool may have
+a different ID than that representing the finger or tool in an earlier frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -251,7 +303,15 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#rotationAngle" ><abbr title="Frame#rotationAngle">rotationAngle</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The angle of rotation around the rotation axis derived from the overall </td>
+						<td><p>The angle of rotation around the rotation axis derived from the overall 
+rotational motion between the current frame and the specified frame.</p>
+<p>The returned angle is expressed in radians measured clockwise around 
+the rotation axis (using the right-hand rule) between the start and end frames. 
+The value is always between 0 and pi radians (0 and 180 degrees).</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then the 
+angle of rotation is zero.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -272,7 +332,14 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#rotationAngle" ><abbr title="Hand#rotationAngle">rotationAngle</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The angle of rotation around the rotation axis derived from the change in </td>
+						<td><p>The angle of rotation around the rotation axis derived from the change in 
+orientation of this hand, and any associated fingers and tools, between the 
+current frame and the specified frame.</p>
+<p>The returned angle is expressed in radians measured clockwise around the 
+rotation axis (using the right-hand rule) between the start and end frames. 
+The value is always between 0 and pi radians (0 and 180 degrees).</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then the angle of rotation is zero.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -293,7 +360,13 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#rotationAxis" ><abbr title="Frame#rotationAxis">rotationAxis</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The axis of rotation derived from the overall rotational motion between </td>
+						<td><p>The axis of rotation derived from the overall rotational motion between 
+the current frame and the specified frame.</p>
+<p>The returned direction vector is normalized.</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, or if no 
+rotation is detected between the two frames, a zero vector is returned.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -314,7 +387,11 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#rotationAxis" ><abbr title="Hand#rotationAxis">rotationAxis</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The axis of rotation derived from the change in orientation of this hand, and </td>
+						<td><p>The axis of rotation derived from the change in orientation of this hand, and 
+any associated fingers and tools, between the current frame and the specified frame.</p>
+<p>The returned direction vector is normalized.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then this method returns a zero vector.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -335,7 +412,12 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#rotationMatrix" ><abbr title="Frame#rotationMatrix">rotationMatrix</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The transform matrix expressing the rotation derived from the overall </td>
+						<td><p>The transform matrix expressing the rotation derived from the overall 
+rotational motion between the current frame and the specified frame.</p>
+<p>The Leap derives frame rotation from the relative change in position and 
+orientation of all objects detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then 
+this method returns an identity matrix.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -356,7 +438,12 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#rotationMatrix" ><abbr title="Hand#rotationMatrix">rotationMatrix</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The transform matrix expressing the rotation derived from the change in </td>
+						<td><p>The transform matrix expressing the rotation derived from the change in 
+orientation of this hand, and any associated fingers and tools, between 
+the current frame and the specified frame.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either 
+this frame or sinceFrame are invalid Frame objects, then this method returns 
+an identity matrix.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -377,7 +464,12 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#scaleFactor" ><abbr title="Frame#scaleFactor">scaleFactor</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The scale factor derived from the overall motion between the current frame and the specified frame.</p></td>
+						<td><p>The scale factor derived from the overall motion between the current frame and the specified frame.</p>
+<p>The scale factor is always positive. A value of 1.0 indicates no scaling took place. 
+Values between 0.0 and 1.0 indicate contraction and values greater than 1.0 indicate expansion.</p>
+<p>The Leap derives scaling from the relative inward or outward motion of all 
+objects detected in the field of view (independent of translation and rotation).</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then this method returns 1.0.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -398,7 +490,13 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#scaleFactor" ><abbr title="Hand#scaleFactor">scaleFactor</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The scale factor derived from the hand's motion between the current frame and the specified frame.</p></td>
+						<td><p>The scale factor derived from the hand's motion between the current frame and the specified frame.</p>
+<p>The scale factor is always positive. A value of 1.0 indicates no scaling took place. 
+Values between 0.0 and 1.0 indicate contraction and values greater than 1.0 indicate expansion.</p>
+<p>The Leap derives scaling from the relative inward or outward motion of a hand 
+and its associated fingers and tools (independent of translation and rotation).</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either this frame or sinceFrame 
+are invalid Frame objects, then this method returns 1.0.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -461,7 +559,8 @@ $(document).ready(function(){
 								<strong><a href="Pointable.html#toString" ><abbr title="Pointable#toString">toString</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>A string containing a brief, human readable description of the Pointable</td>
+						<td><p>A string containing a brief, human readable description of the Pointable
+object.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -482,7 +581,15 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#tool" ><abbr title="Frame#tool">tool</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The tool with the specified ID in this frame.</p></td>
+						<td><p>The tool with the specified ID in this frame.</p>
+<p>Use the Frame tool() function to retrieve a tool from
+this frame using an ID value obtained from a previous frame.
+This function always returns a Pointable object, but if no tool
+with the specified ID is present, an invalid Pointable object is returned.</p>
+<p>Note that ID values persist across frames, but only until tracking of a
+particular object is lost. If tracking of a tool is lost and subsequently
+regained, the new Pointable object representing that tool may have a
+different ID than that representing the tool in an earlier frame.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -503,7 +610,14 @@ $(document).ready(function(){
 								<strong><a href="Frame.html#translation" ><abbr title="Frame#translation">translation</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The change of position derived from the overall linear motion between the </td>
+						<td><p>The change of position derived from the overall linear motion between the 
+current frame and the specified frame.</p>
+<p>The returned translation vector provides the magnitude and direction of the 
+movement in millimeters.</p>
+<p>The Leap derives frame translation from the linear motion of all objects 
+detected in the field of view.</p>
+<p>If either this frame or sinceFrame is an invalid Frame object, then this 
+method returns a zero vector.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -524,7 +638,11 @@ $(document).ready(function(){
 								<strong><a href="Hand.html#translation" ><abbr title="Hand#translation">translation</abbr></a></strong>
 							</abbr>
 						</td>
-						<td><p>The change of position of this hand between the current frame and the specified frame</p></td>
+						<td><p>The change of position of this hand between the current frame and the specified frame</p>
+<p>The returned translation vector provides the magnitude and direction of the 
+movement in millimeters.</p>
+<p>If a corresponding Hand object is not found in sinceFrame, or if either this frame or 
+sinceFrame are invalid Frame objects, then this method returns a zero vector.</p></td>
 						<td width="15%">
 							<div class="location">
 							
@@ -539,7 +657,7 @@ $(document).ready(function(){
 		</div>
 
 		<footer>
-	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:33:39 GMT-0600 (MDT)
+	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Tue May 07 2013 19:42:28 GMT-0600 (MDT)
 </footer>
 
 	</body>
