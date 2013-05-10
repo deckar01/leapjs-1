@@ -1,57 +1,63 @@
 var tree = [
-	["Leap", "class_index.html", "", [
+	["Leap JavaScript API Reference", "class_index.html", "", [
 		[
+	"Leap", 
+	"Leap.html", "", [
+  [
 	"CircleGesture", 
-	"CircleGesture.html", "", [
+	"Leap.CircleGesture.html", " < Leap.Gesture", [
   
 	]
 ]
-,[
+, [
 	"Controller", 
-	"Controller.html", "", [
+	"Leap.Controller.html", "", [
   
 	]
 ]
-,[
+, [
 	"Frame", 
-	"Frame.html", "", [
+	"Leap.Frame.html", "", [
   
 	]
 ]
-,[
+, [
 	"Gesture", 
-	"Gesture.html", "", [
+	"Leap.Gesture.html", "", [
   
 	]
 ]
-,[
+, [
 	"Hand", 
-	"Hand.html", "", [
+	"Leap.Hand.html", "", [
   
 	]
 ]
-,[
+, [
 	"KeyTapGesture", 
-	"KeyTapGesture.html", "", [
+	"Leap.KeyTapGesture.html", " < Leap.Gesture", [
   
 	]
 ]
-,[
+, [
 	"Pointable", 
-	"Pointable.html", "", [
+	"Leap.Pointable.html", "", [
   
 	]
 ]
-,[
+, [
 	"ScreenTapGesture", 
-	"ScreenTapGesture.html", "", [
+	"Leap.ScreenTapGesture.html", " < Leap.Gesture", [
   
 	]
 ]
-,[
+, [
 	"SwipeGesture", 
-	"SwipeGesture.html", "", [
+	"Leap.SwipeGesture.html", " < Leap.Gesture", [
   
+	]
+]
+
 	]
 ]
 

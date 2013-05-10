@@ -65,6 +65,8 @@ $(document).ready(function(){
 	
 	
 	
+	<li><a href="namespace_index.html">Namespaces</a></li>
+	
 	
 	
 	
@@ -97,7 +99,7 @@ $(document).ready(function(){
 					<tr>
 						<td>
 							
-							<a href="CircleGesture.html" ><abbr title="CircleGesture">CircleGesture</abbr></a>
+							<a href="Leap.CircleGesture.html" ><abbr title="Leap.CircleGesture">Leap.CircleGesture</abbr></a>
 							
 						</td>
 						<td>
@@ -119,14 +121,14 @@ progressed far enough for the recognizer to classify it as a circle.</li>
 					<tr>
 						<td>
 							
-							<a href="Controller.html" ><abbr title="Controller">Controller</abbr></a>
+							<a href="Leap.Controller.html" ><abbr title="Leap.Controller">Leap.Controller</abbr></a>
 							
 						</td>
 						<td>
 						  <p>The Controller class is your main interface to the Leap Motion Controller.</p>
 <p>Create an instance of this Controller class to access frames of tracking data 
 and configuration information. Frame data can be polled at any time using the 
-<a href="Controller.html#frame">Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
+<a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
 frame. Set the history parameter to a positive integer to access previous frames. 
 A controller stores up to 60 frames in its frame history.</p>
 <p>Polling is an appropriate strategy for applications which already have an 
@@ -137,7 +139,7 @@ intrinsic update loop, such as a game.</p>
 					<tr>
 						<td>
 							
-							<a href="Frame.html" ><abbr title="Frame">Frame</abbr></a>
+							<a href="Leap.Frame.html" ><abbr title="Leap.Frame">Leap.Frame</abbr></a>
 							
 						</td>
 						<td>
@@ -145,15 +147,15 @@ intrinsic update loop, such as a game.</p>
 in a single frame.</p>
 <p>The Leap detects hands, fingers and tools within the tracking area, reporting
 their positions, orientations and motions in frames at the Leap frame rate.</p>
-<p>Access Frame objects using the <a href="Controller.html#frame">Controller#frame</a>() function.</p>
+<p>Access Frame objects using the <a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function.</p>
 						</td>
 					</tr>
 					
 					<tr>
 						<td>
-							
-							<a href="Gesture.html" ><abbr title="Gesture">Gesture</abbr></a>
-							
+							<em>
+							<a href="Leap.Gesture.html" ><abbr title="Leap.Gesture">Leap.Gesture</abbr></a>
+							</em>
 						</td>
 						<td>
 						  <p>The Gesture class represents a recognized movement by the user.</p>
@@ -196,7 +198,7 @@ invalid.</p>
 					<tr>
 						<td>
 							
-							<a href="Hand.html" ><abbr title="Hand">Hand</abbr></a>
+							<a href="Leap.Hand.html" ><abbr title="Leap.Hand">Leap.Hand</abbr></a>
 							
 						</td>
 						<td>
@@ -209,14 +211,14 @@ valid tracking data and do not correspond to a physical entity. Invalid Hand
 objects can be the result of asking for a Hand object using an ID from an
 earlier frame when no Hand objects with that ID exist in the current frame.
 A Hand object created from the Hand constructor is also invalid.
-Test for validity with the <a href="Hand.html#valid">Hand#valid</a> property.</p>
+Test for validity with the <a href="Leap.Hand.html#valid">Leap.Hand#valid</a> property.</p>
 						</td>
 					</tr>
 					
 					<tr>
 						<td>
 							
-							<a href="KeyTapGesture.html" ><abbr title="KeyTapGesture">KeyTapGesture</abbr></a>
+							<a href="Leap.KeyTapGesture.html" ><abbr title="Leap.KeyTapGesture">Leap.KeyTapGesture</abbr></a>
 							
 						</td>
 						<td>
@@ -234,7 +236,7 @@ key tap gesture recognized.</p>
 					<tr>
 						<td>
 							
-							<a href="Pointable.html" ><abbr title="Pointable">Pointable</abbr></a>
+							<a href="Leap.Pointable.html" ><abbr title="Leap.Pointable">Leap.Pointable</abbr></a>
 							
 						</td>
 						<td>
@@ -257,7 +259,7 @@ property.</p>
 					<tr>
 						<td>
 							
-							<a href="ScreenTapGesture.html" ><abbr title="ScreenTapGesture">ScreenTapGesture</abbr></a>
+							<a href="Leap.ScreenTapGesture.html" ><abbr title="Leap.ScreenTapGesture">Leap.ScreenTapGesture</abbr></a>
 							
 						</td>
 						<td>
@@ -275,7 +277,7 @@ screen tap gesture recognized.</p>
 					<tr>
 						<td>
 							
-							<a href="SwipeGesture.html" ><abbr title="SwipeGesture">SwipeGesture</abbr></a>
+							<a href="Leap.SwipeGesture.html" ><abbr title="Leap.SwipeGesture">Leap.SwipeGesture</abbr></a>
 							
 						</td>
 						<td>
