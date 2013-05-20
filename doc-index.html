@@ -90,13 +90,48 @@ $(document).ready(function(){
 
 				<div class="type">Index</div>
 
-				A&nbsp;B&nbsp;<a href="#letterC">C</a>&nbsp;<a href="#letterD">D</a>&nbsp;E&nbsp;<a href="#letterF">F</a>&nbsp;<a href="#letterG">G</a>&nbsp;<a href="#letterH">H</a>&nbsp;I&nbsp;J&nbsp;<a href="#letterK">K</a>&nbsp;<a href="#letterL">L</a>&nbsp;M&nbsp;N&nbsp;O&nbsp;<a href="#letterP">P</a>&nbsp;Q&nbsp;<a href="#letterR">R</a>&nbsp;<a href="#letterS">S</a>&nbsp;<a href="#letterT">T</a>&nbsp;U&nbsp;V&nbsp;W&nbsp;X&nbsp;Y&nbsp;Z&nbsp;
+				<a href="#letterA">A</a>&nbsp;B&nbsp;<a href="#letterC">C</a>&nbsp;<a href="#letterD">D</a>&nbsp;E&nbsp;<a href="#letterF">F</a>&nbsp;<a href="#letterG">G</a>&nbsp;<a href="#letterH">H</a>&nbsp;<a href="#letterI">I</a>&nbsp;J&nbsp;<a href="#letterK">K</a>&nbsp;<a href="#letterL">L</a>&nbsp;<a href="#letterM">M</a>&nbsp;<a href="#letterN">N</a>&nbsp;O&nbsp;<a href="#letterP">P</a>&nbsp;Q&nbsp;<a href="#letterR">R</a>&nbsp;<a href="#letterS">S</a>&nbsp;<a href="#letterT">T</a>&nbsp;U&nbsp;<a href="#letterV">V</a>&nbsp;W&nbsp;X&nbsp;Y&nbsp;Z&nbsp;
 			</div>
 		</header>
 
 		<div class="content">
 			
 			 
+			
+
+			<h2 id="letterA">
+				A
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#AngleTo" ><abbr title="Leap.Vector#AngleTo">AngleTo</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The angle between this vector and the specified vector in radians.</p>
+<p>The angle is measured in the plane formed by the two vectors. 
+The angle returned is always the smaller of the two conjugate angles. 
+Thus A.angleTo(B) == B.angleTo(A) and is always a positive value less 
+than or equal to pi radians (180 degrees).</p>
+<p>If either vector has zero length, then this function returns zero.</p>
+<p><img src="images/Math_AngleTo.png" alt="Vector AngleTo"></p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
 			
 
 			<h2 id="letterC">
@@ -131,6 +166,19 @@ progressed far enough for the recognizer to classify it as a circle.</li>
 				
 				
 				<dt>
+				<a href="Leap.Vector.html#compare" ><abbr title="Leap.Vector#compare">compare</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Compare Vector equality component-wise.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Controller.html" ><abbr title="Leap.Controller">Controller</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -149,6 +197,24 @@ A controller stores up to 60 frames in its frame history.</p>
 intrinsic update loop, such as a game.</p>
 				</dd>
 				
+				
+				<dt>
+				<a href="Leap.Vector.html#Cross" ><abbr title="Leap.Vector#Cross">Cross</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The cross product of this vector and the specified vector.</p>
+<p>The cross product is a vector orthogonal to both original vectors. 
+It has a magnitude equal to the area of a parallelogram having the 
+two vectors as sides. The direction of the returned vector is 
+determined by the right-hand rule. Thus A.cross(B) == -B.cross(A).</p>
+<p><img src="images/Math_Cross.png" alt="Vector Cross"></p>
+				</dd>
+				
 			</dl>
 
 			
@@ -164,6 +230,49 @@ intrinsic update loop, such as a game.</p>
 				<small><a href="#">Top</a></small>
 			</h2>
 			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#distanceTo" ><abbr title="Leap.Vector#distanceTo">distanceTo</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The distance between the point represented by this Vector object 
+and a point represented by the specified Vector object.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#dividedBy" ><abbr title="Leap.Vector#dividedBy">dividedBy</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Divide vector by a scalar.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#dot" ><abbr title="Leap.Vector#dot">dot</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The dot product of this vector with another vector.</p>
+<p>The dot product is the magnitude of the projection of this vector onto 
+the specified vector.</p>
+<p><img src="images/Math_Dot.png" alt="Vector Dot"></p>
+				</dd>
 				
 				
 				<dt>
@@ -403,6 +512,36 @@ a different ID than that representing the physical hand in an earlier frame.</p>
 		 
 			
 
+			<h2 id="letterI">
+				I
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#isValid" ><abbr title="Leap.Vector#isValid">isValid</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Returns true if all of the vector's components are finite.</p>
+<p>If any component is NaN or infinite, then this returns false.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
 			<h2 id="letterK">
 				K
 				<small><a href="#">Top</a></small>
@@ -495,11 +634,145 @@ example.</p>
 		 
 			
 
+			<h2 id="letterM">
+				M
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#magnitude" ><abbr title="Leap.Vector#magnitude">magnitude</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The magnitude, or length, of this vector.</p>
+<p>The magnitude is the L2 norm, or Euclidean distance between the 
+origin and the point represented by the (x, y, z) components of 
+this Vector object.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#magnitudeSquared" ><abbr title="Leap.Vector#magnitudeSquared">magnitudeSquared</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The square of the magnitude, or length, of this vector.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#minus" ><abbr title="Leap.Vector#minus">minus</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Subtract vectors component-wise.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#multiply" ><abbr title="Leap.Vector#multiply">multiply</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Multiply vector by a scalar.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterN">
+				N
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#normalized" ><abbr title="Leap.Vector#normalized">normalized</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>A normalized copy of this vector.</p>
+<p>A normalized vector has the same direction as the original 
+vector, but with a length of one.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
 			<h2 id="letterP">
 				P
 				<small><a href="#">Top</a></small>
 			</h2>
 			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#pitch" ><abbr title="Leap.Vector#pitch">pitch</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The pitch angle in radians.</p>
+<p>Pitch is the angle between the negative z-axis and the projection 
+of the vector onto the y-z plane. In other words, pitch represents 
+rotation around the x-axis. If the vector points upward, the 
+returned angle is between 0 and pi radians (180 degrees); if it 
+points downward, the angle is between 0 and -pi radians.</p>
+<p><img src="images/Math_Pitch.png" alt="Vector Pitch"></p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#plus" ><abbr title="Leap.Vector#plus">plus</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Add vectors component-wise.</p>
+				</dd>
 				
 				
 				<dt>
@@ -562,6 +835,50 @@ a different ID than that representing the finger or tool in an earlier frame.</p
 				<small><a href="#">Top</a></small>
 			</h2>
 			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#roll" ><abbr title="Leap.Vector#roll">roll</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The roll angle in radians.</p>
+<p>Roll is the angle between the y-axis and the projection of 
+the vector onto the x-y plane. In other words, roll represents 
+rotation around the z-axis. If the vector points to the left 
+of the y-axis, then the returned angle is between 0 and pi 
+radians (180 degrees); if it points to the right, the angle is 
+between 0 and -pi radians.</p>
+<p><img src="images/Math_Roll.png" alt="Vector Roll"></p>
+<p>Use this function to get roll angle of the plane to which this 
+vector is a normal. For example, if this vector represents the 
+normal to the palm, then this function returns the tilt or roll 
+of the palm plane compared to the horizontal (x-z) plane.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#roll" ><abbr title="Leap.Vector#roll">roll</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The yaw angle in radians. </p>
+<p>Yaw is the angle between the negative z-axis and the projection 
+of the vector onto the x-z plane. In other words, yaw represents 
+rotation around the y-axis. If the vector points to the right 
+of the negative z-axis, then the returned angle is between 0 and 
+pi radians (180 degrees); if it points to the left, the angle 
+is between 0 and -pi radians.</p>
+<p><img src="images/Math_Yaw.png" alt="Vector Roll"></p>
+				</dd>
 				
 				
 				<dt>
@@ -782,6 +1099,19 @@ screen tap gesture recognized.</p>
 				
 				
 				<dt>
+				<a href="Leap.Vector.html#toArray" ><abbr title="Leap.Vector#toArray">toArray</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Returns the vector as a float array.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Frame.html#tool" ><abbr title="Leap.Frame#tool">tool</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -843,6 +1173,20 @@ object.</p>
 				
 				
 				<dt>
+				<a href="Leap.Vector.html#toString" ><abbr title="Leap.Vector#toString">toString</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Returns a string containing this vector in a human readable 
+format: (x, y, z).</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Frame.html#translation" ><abbr title="Leap.Frame#translation">translation</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -876,6 +1220,44 @@ method returns a zero vector.</p>
 movement in millimeters.</p>
 <p>If a corresponding Hand object is not found in sinceFrame, or if either this frame or 
 sinceFrame are invalid Frame objects, then this method returns a zero vector.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterV">
+				V
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Vector</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace <a href="Leap.html" ><abbr title="Leap">Leap</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The Vector struct represents a three-component mathematical vector or point 
+such as a direction or position in three-dimensional space.</p>
+<p>The Leap software employs a right-handed Cartesian coordinate system. 
+Values given are in units of real-world millimeters. The origin is 
+centered at the center of the Leap device. The x- and z-axes lie in the 
+horizontal plane, with the x-axis running parallel to the long edge of 
+the device. The y-axis is vertical, with positive values increasing upwards 
+(in contrast to the downward orientation of most computer graphics 
+coordinate systems). The z-axis has positive values increasing away from the 
+computer screen.</p>
 				</dd>
 				
 			</dl>

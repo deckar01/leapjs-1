@@ -97,6 +97,147 @@ $(document).ready(function(){
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Vector#AngleTo">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#AngleTo">
+								<strong><a href="Leap.Vector.html#AngleTo" ><abbr title="Leap.Vector#AngleTo">AngleTo</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The angle between this vector and the specified vector in radians.</p>
+<p>The angle is measured in the plane formed by the two vectors. 
+The angle returned is always the smaller of the two conjugate angles. 
+Thus A.angleTo(B) == B.angleTo(A) and is always a positive value less 
+than or equal to pi radians (180 degrees).</p>
+<p>If either vector has zero length, then this function returns zero.</p>
+<p><img src="images/Math_AngleTo.png" alt="Vector AngleTo"></p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno85">vector.js</a> at line 85
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#Cross">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#Cross">
+								<strong><a href="Leap.Vector.html#Cross" ><abbr title="Leap.Vector#Cross">Cross</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The cross product of this vector and the specified vector.</p>
+<p>The cross product is a vector orthogonal to both original vectors. 
+It has a magnitude equal to the area of a parallelogram having the 
+two vectors as sides. The direction of the returned vector is 
+determined by the right-hand rule. Thus A.cross(B) == -B.cross(A).</p>
+<p><img src="images/Math_Cross.png" alt="Vector Cross"></p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno109">vector.js</a> at line 109
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#compare">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#compare">
+								<strong><a href="Leap.Vector.html#compare" ><abbr title="Leap.Vector#compare">compare</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Compare Vector equality component-wise.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno345">vector.js</a> at line 345
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#distanceTo">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#distanceTo">
+								<strong><a href="Leap.Vector.html#distanceTo" ><abbr title="Leap.Vector#distanceTo">distanceTo</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The distance between the point represented by this Vector object 
+and a point represented by the specified Vector object.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno132">vector.js</a> at line 132
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#dividedBy">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#dividedBy">
+								<strong><a href="Leap.Vector.html#dividedBy" ><abbr title="Leap.Vector#dividedBy">dividedBy</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Divide vector by a scalar.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno198">vector.js</a> at line 198
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#dot">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#dot">
+								<strong><a href="Leap.Vector.html#dot" ><abbr title="Leap.Vector#dot">dot</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The dot product of this vector with another vector.</p>
+<p>The dot product is the magnitude of the projection of this vector onto 
+the specified vector.</p>
+<p><img src="images/Math_Dot.png" alt="Vector Dot"></p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno145">vector.js</a> at line 145
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Frame#dump">
 								<a href="Leap.Frame.html" ><abbr title="Leap.Frame">Leap.Frame</abbr></a>.
 							</abbr>
@@ -232,6 +373,28 @@ a different ID than that representing the physical hand in an earlier frame.</p>
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Vector#isValid">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#isValid">
+								<strong><a href="Leap.Vector.html#isValid" ><abbr title="Leap.Vector#isValid">isValid</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Returns true if all of the vector's components are finite.</p>
+<p>If any component is NaN or infinite, then this returns false.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno357">vector.js</a> at line 357
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.loop">
 								<a href="Leap.html" ><abbr title="Leap">Leap</abbr></a>.
 							</abbr>
@@ -267,6 +430,164 @@ example.</p></td>
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Vector#magnitude">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#magnitude">
+								<strong><a href="Leap.Vector.html#magnitude" ><abbr title="Leap.Vector#magnitude">magnitude</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The magnitude, or length, of this vector.</p>
+<p>The magnitude is the L2 norm, or Euclidean distance between the 
+origin and the point represented by the (x, y, z) components of 
+this Vector object.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno210">vector.js</a> at line 210
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#magnitudeSquared">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#magnitudeSquared">
+								<strong><a href="Leap.Vector.html#magnitudeSquared" ><abbr title="Leap.Vector#magnitudeSquared">magnitudeSquared</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The square of the magnitude, or length, of this vector.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno225">vector.js</a> at line 225
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#minus">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#minus">
+								<strong><a href="Leap.Vector.html#minus" ><abbr title="Leap.Vector#minus">minus</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Subtract vectors component-wise.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno174">vector.js</a> at line 174
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#multiply">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#multiply">
+								<strong><a href="Leap.Vector.html#multiply" ><abbr title="Leap.Vector#multiply">multiply</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Multiply vector by a scalar.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno186">vector.js</a> at line 186
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#normalized">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#normalized">
+								<strong><a href="Leap.Vector.html#normalized" ><abbr title="Leap.Vector#normalized">normalized</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>A normalized copy of this vector.</p>
+<p>A normalized vector has the same direction as the original 
+vector, but with a length of one.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno236">vector.js</a> at line 236
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#pitch">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#pitch">
+								<strong><a href="Leap.Vector.html#pitch" ><abbr title="Leap.Vector#pitch">pitch</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The pitch angle in radians.</p>
+<p>Pitch is the angle between the negative z-axis and the projection 
+of the vector onto the y-z plane. In other words, pitch represents 
+rotation around the x-axis. If the vector points upward, the 
+returned angle is between 0 and pi radians (180 degrees); if it 
+points downward, the angle is between 0 and -pi radians.</p>
+<p><img src="images/Math_Pitch.png" alt="Vector Pitch"></p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno253">vector.js</a> at line 253
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#plus">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#plus">
+								<strong><a href="Leap.Vector.html#plus" ><abbr title="Leap.Vector#plus">plus</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Add vectors component-wise.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno162">vector.js</a> at line 162
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Frame#pointable">
 								<a href="Leap.Frame.html" ><abbr title="Leap.Frame">Leap.Frame</abbr></a>.
 							</abbr>
@@ -289,6 +610,66 @@ a different ID than that representing the finger or tool in an earlier frame.</p
 							<div class="location">
 							
 								<a href="lib_frame_js.html#lineno173">frame.js</a> at line 173
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#roll">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#roll">
+								<strong><a href="Leap.Vector.html#roll" ><abbr title="Leap.Vector#roll">roll</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The roll angle in radians.</p>
+<p>Roll is the angle between the y-axis and the projection of 
+the vector onto the x-y plane. In other words, roll represents 
+rotation around the z-axis. If the vector points to the left 
+of the y-axis, then the returned angle is between 0 and pi 
+radians (180 degrees); if it points to the right, the angle is 
+between 0 and -pi radians.</p>
+<p><img src="images/Math_Roll.png" alt="Vector Roll"></p>
+<p>Use this function to get roll angle of the plane to which this 
+vector is a normal. For example, if this vector represents the 
+normal to the palm, then this function returns the tilt or roll 
+of the palm plane compared to the horizontal (x-z) plane.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno273">vector.js</a> at line 273
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#roll">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#roll">
+								<strong><a href="Leap.Vector.html#roll" ><abbr title="Leap.Vector#roll">roll</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>The yaw angle in radians. </p>
+<p>Yaw is the angle between the negative z-axis and the projection 
+of the vector onto the x-z plane. In other words, yaw represents 
+rotation around the y-axis. If the vector points to the right 
+of the negative z-axis, then the returned angle is between 0 and 
+pi radians (180 degrees); if it points to the left, the angle 
+is between 0 and -pi radians.</p>
+<p><img src="images/Math_Yaw.png" alt="Vector Roll"></p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno299">vector.js</a> at line 299
 							
 							</div> 
 						</td>
@@ -510,6 +891,27 @@ are invalid Frame objects, then this method returns 1.0.</p></td>
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Vector#toArray">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#toArray">
+								<strong><a href="Leap.Vector.html#toArray" ><abbr title="Leap.Vector#toArray">toArray</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Returns the vector as a float array.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno320">vector.js</a> at line 320
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Frame#toString">
 								<a href="Leap.Frame.html" ><abbr title="Leap.Frame">Leap.Frame</abbr></a>.
 							</abbr>
@@ -567,6 +969,28 @@ object.</p></td>
 							<div class="location">
 							
 								<a href="lib_pointable_js.html#lineno120">pointable.js</a> at line 120
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Vector#toString">
+								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Vector#toString">
+								<strong><a href="Leap.Vector.html#toString" ><abbr title="Leap.Vector#toString">toString</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Returns a string containing this vector in a human readable 
+format: (x, y, z).</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_vector_js.html#lineno331">vector.js</a> at line 331
 							
 							</div> 
 						</td>

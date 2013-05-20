@@ -57,6 +57,12 @@ var tree = [
   
 	]
 ]
+, [
+	"Vector", 
+	"Leap.Vector.html", "", [
+  
+	]
+]
 
 	]
 ]
