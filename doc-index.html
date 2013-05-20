@@ -90,7 +90,7 @@ $(document).ready(function(){
 
 				<div class="type">Index</div>
 
-				<a href="#letterA">A</a>&nbsp;B&nbsp;<a href="#letterC">C</a>&nbsp;<a href="#letterD">D</a>&nbsp;E&nbsp;<a href="#letterF">F</a>&nbsp;<a href="#letterG">G</a>&nbsp;<a href="#letterH">H</a>&nbsp;<a href="#letterI">I</a>&nbsp;J&nbsp;<a href="#letterK">K</a>&nbsp;<a href="#letterL">L</a>&nbsp;<a href="#letterM">M</a>&nbsp;<a href="#letterN">N</a>&nbsp;O&nbsp;<a href="#letterP">P</a>&nbsp;Q&nbsp;<a href="#letterR">R</a>&nbsp;<a href="#letterS">S</a>&nbsp;<a href="#letterT">T</a>&nbsp;U&nbsp;<a href="#letterV">V</a>&nbsp;W&nbsp;X&nbsp;Y&nbsp;Z&nbsp;
+				<a href="#letterA">A</a>&nbsp;B&nbsp;<a href="#letterC">C</a>&nbsp;<a href="#letterD">D</a>&nbsp;E&nbsp;<a href="#letterF">F</a>&nbsp;<a href="#letterG">G</a>&nbsp;<a href="#letterH">H</a>&nbsp;<a href="#letterI">I</a>&nbsp;J&nbsp;<a href="#letterK">K</a>&nbsp;<a href="#letterL">L</a>&nbsp;<a href="#letterM">M</a>&nbsp;<a href="#letterN">N</a>&nbsp;O&nbsp;<a href="#letterP">P</a>&nbsp;Q&nbsp;<a href="#letterR">R</a>&nbsp;<a href="#letterS">S</a>&nbsp;<a href="#letterT">T</a>&nbsp;U&nbsp;<a href="#letterV">V</a>&nbsp;W&nbsp;X&nbsp;<a href="#letterY">Y</a>&nbsp;Z&nbsp;
 			</div>
 		</header>
 
@@ -758,7 +758,7 @@ of the vector onto the y-z plane. In other words, pitch represents
 rotation around the x-axis. If the vector points upward, the 
 returned angle is between 0 and pi radians (180 degrees); if it 
 points downward, the angle is between 0 and -pi radians.</p>
-<p><img src="images/Math_Pitch.png" alt="Vector Pitch"></p>
+<p><img src="images/Math_Pitch_Angle.png" alt="Vector Pitch"></p>
 				</dd>
 				
 				
@@ -853,31 +853,11 @@ rotation around the z-axis. If the vector points to the left
 of the y-axis, then the returned angle is between 0 and pi 
 radians (180 degrees); if it points to the right, the angle is 
 between 0 and -pi radians.</p>
-<p><img src="images/Math_Roll.png" alt="Vector Roll"></p>
+<p><img src="images/Math_Roll_Angle.png" alt="Vector Roll"></p>
 <p>Use this function to get roll angle of the plane to which this 
 vector is a normal. For example, if this vector represents the 
 normal to the palm, then this function returns the tilt or roll 
 of the palm plane compared to the horizontal (x-z) plane.</p>
-				</dd>
-				
-				
-				<dt>
-				<a href="Leap.Vector.html#roll" ><abbr title="Leap.Vector#roll">roll</abbr></a>
-				
-				&nbsp;&mdash;&nbsp;
-				<em>
-					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
-				</em>
-				</dt>
-				<dd>
-					<p>The yaw angle in radians. </p>
-<p>Yaw is the angle between the negative z-axis and the projection 
-of the vector onto the x-z plane. In other words, yaw represents 
-rotation around the y-axis. If the vector points to the right 
-of the negative z-axis, then the returned angle is between 0 and 
-pi radians (180 degrees); if it points to the left, the angle 
-is between 0 and -pi radians.</p>
-<p><img src="images/Math_Yaw.png" alt="Vector Roll"></p>
 				</dd>
 				
 				
@@ -1258,6 +1238,42 @@ the device. The y-axis is vertical, with positive values increasing upwards
 (in contrast to the downward orientation of most computer graphics 
 coordinate systems). The z-axis has positive values increasing away from the 
 computer screen.</p>
+				</dd>
+				
+			</dl>
+
+			
+
+		</dl>
+
+		
+		 
+			
+
+			<h2 id="letterY">
+				Y
+				<small><a href="#">Top</a></small>
+			</h2>
+			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Vector.html#yaw" ><abbr title="Leap.Vector#yaw">yaw</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The yaw angle in radians. </p>
+<p>Yaw is the angle between the negative z-axis and the projection 
+of the vector onto the x-z plane. In other words, yaw represents 
+rotation around the y-axis. If the vector points to the right 
+of the negative z-axis, then the returned angle is between 0 and 
+pi radians (180 degrees); if it points to the left, the angle 
+is between 0 and -pi radians.</p>
+<p><img src="images/Math_Yaw_Angle.png" alt="Vector Roll"></p>
 				</dd>
 				
 			</dl>

@@ -1296,39 +1296,6 @@ computer screen.</p></p></div>
     <tr  class="public">
       <td class="type">
       	<span>
-      	Float
-      	</span>
-      </td>
-      
-      <td class="last">
-		
-			<a href="#roll">
-				<abbr title="Leap.Vector#roll">
-					roll
-				</abbr>
-			</a>
-		
-        
-      	<span>
-      		()
-      	</span>
-        
-        
-		
-		
-
-		
-      </td>
-      
-      <td>
-      	
-      </td>
-    </tr>
-    
-
-    <tr  class="public">
-      <td class="type">
-      	<span>
       	Float[]
       	</span>
       </td>
@@ -1371,6 +1338,39 @@ computer screen.</p></p></div>
 			<a href="#toString">
 				<abbr title="Leap.Vector#toString">
 					toString
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Float
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#yaw">
+				<abbr title="Leap.Vector#yaw">
+					yaw
 				</abbr>
 			</a>
 		
@@ -3274,7 +3274,7 @@ of the vector onto the y-z plane. In other words, pitch represents
 rotation around the x-axis. If the vector points upward, the 
 returned angle is between 0 and pi radians (180 degrees); if it 
 points downward, the angle is between 0 and -pi radians.</p>
-<p><img src="images/Math_Pitch.png" alt="Vector Pitch"></p></p></div>
+<p><img src="images/Math_Pitch_Angle.png" alt="Vector Pitch"></p></p></div>
 
 
 <div class="details ">
@@ -3457,7 +3457,7 @@ rotation around the z-axis. If the vector points to the left
 of the y-axis, then the returned angle is between 0 and pi 
 radians (180 degrees); if it points to the right, the angle is 
 between 0 and -pi radians.</p>
-<p><img src="images/Math_Roll.png" alt="Vector Roll"></p>
+<p><img src="images/Math_Roll_Angle.png" alt="Vector Roll"></p>
 <p>Use this function to get roll angle of the plane to which this 
 vector is a normal. For example, if this vector represents the 
 normal to the palm, then this function returns the tilt or roll 
@@ -3489,90 +3489,6 @@ of the palm plane compared to the horizontal (x-z) plane.</p></p></div>
     <td class="last">
     <p><p>The angle of this vector above or below the 
 horizon (x-z plane).</p></p>
-    </td>
-    
-  
-
-  </tbody>
-</table>
-    
-
-    <!-- EXCEPTIONS -->
-    
-    
-	</div>
-</div>
-<h3 id="roll"  class="public">
-  
-  <div class="location">
-
-  	<a href="lib_vector_js.html#lineno299">vector.js</a> at line 299
-
-  </div>
-	
-	<div class="signature">
-		
-	  <span class="virtual">
-	    
-	  </span>
-	  
-	  <span class="scope">
-	    
-	  </span>
-	  
-	  <span class="accesslevel">
-	    public
-	  </span>
-	  
-    <span class="returnvalues">
-      Float
-    </span>
-	  
-  
-		<strong>roll</strong>
-		
-    <span class="params">
-      ()
-    </span>
-	</div>
-</h3>
-
-
-<div class="description "><p><p>The yaw angle in radians. </p>
-<p>Yaw is the angle between the negative z-axis and the projection 
-of the vector onto the x-z plane. In other words, yaw represents 
-rotation around the y-axis. If the vector points to the right 
-of the negative z-axis, then the returned angle is between 0 and 
-pi radians (180 degrees); if it points to the left, the angle 
-is between 0 and -pi radians.</p>
-<p><img src="images/Math_Yaw.png" alt="Vector Roll"></p></p></div>
-
-
-<div class="details ">
-	<div class="tags">
-	
-    <!-- PARAMS -->
-    
-
-    <!-- RETURN VALUE -->
-    
-    <h4>Return Value</h4>
-    
-
-<table>
-  <tbody>
-
-  
-  <tr>
-    <td class="type">
-			<span>
-				Float
-			</span>
-    </td>
-    
-    <td class="last">
-    <p><p>The angle of this vector to the right or left 
-of the negative z-axis.</p></p>
     </td>
     
   
@@ -3726,6 +3642,90 @@ format: (x, y, z).</p></p></div>
     
     <td class="last">
     
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="yaw"  class="public">
+  
+  <div class="location">
+
+  	<a href="lib_vector_js.html#lineno299">vector.js</a> at line 299
+
+  </div>
+	
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Float
+    </span>
+	  
+  
+		<strong>yaw</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p><p>The yaw angle in radians. </p>
+<p>Yaw is the angle between the negative z-axis and the projection 
+of the vector onto the x-z plane. In other words, yaw represents 
+rotation around the y-axis. If the vector points to the right 
+of the negative z-axis, then the returned angle is between 0 and 
+pi radians (180 degrees); if it points to the left, the angle 
+is between 0 and -pi radians.</p>
+<p><img src="images/Math_Yaw_Angle.png" alt="Vector Roll"></p></p></div>
+
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Float
+			</span>
+    </td>
+    
+    <td class="last">
+    <p><p>The angle of this vector to the right or left 
+of the negative z-axis.</p></p>
     </td>
     
   
