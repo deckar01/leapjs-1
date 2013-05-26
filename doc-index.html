@@ -166,6 +166,19 @@ progressed far enough for the recognizer to classify it as a circle.</li>
 				
 				
 				<dt>
+				<a href="Leap.Matrix.html#compare" ><abbr title="Leap.Matrix#compare">compare</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Compare Matrix equality component-wise.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Vector.html#compare" ><abbr title="Leap.Vector#compare">compare</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -190,7 +203,7 @@ progressed far enough for the recognizer to classify it as a circle.</li>
 					<p>The Controller class is your main interface to the Leap Motion Controller.</p>
 <p>Create an instance of this Controller class to access frames of tracking data 
 and configuration information. Frame data can be polled at any time using the 
-<a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
+<a href="Leap.Controller.html#frame">Controller.frame</a>() function. Call frame() or frame(0) to get the most recent 
 frame. Set the history parameter to a positive integer to access previous frames. 
 A controller stores up to 60 frames in its frame history.</p>
 <p>Polling is an appropriate strategy for applications which already have an 
@@ -361,7 +374,7 @@ earlier frame.</p>
 in a single frame.</p>
 <p>The Leap detects hands, fingers and tools within the tracking area, reporting
 their positions, orientations and motions in frames at the Leap frame rate.</p>
-<p>Access Frame objects using the <a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function.</p>
+<p>Access Frame objects using the <a href="Leap.Controller.html#frame">Controller.frame</a>() function.</p>
 				</dd>
 				
 				
@@ -478,7 +491,7 @@ valid tracking data and do not correspond to a physical entity. Invalid Hand
 objects can be the result of asking for a Hand object using an ID from an
 earlier frame when no Hand objects with that ID exist in the current frame.
 A Hand object created from the Hand constructor is also invalid.
-Test for validity with the <a href="Leap.Hand.html#valid">Leap.Hand#valid</a> property.</p>
+Test for validity with the <a href="Leap.Hand.html#valid">Hand.valid</a> property.</p>
 				</dd>
 				
 				
@@ -671,6 +684,26 @@ this Vector object.</p>
 				
 				
 				<dt>
+				<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Matrix</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					 class in namespace <a href="Leap.html" ><abbr title="Leap">Leap</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>The Matrix struct represents a transformation matrix. </p>
+<p>To use this object to transform a Vector, construct a matrix 
+containing the desired transformation and then use the 
+<a href="Leap.Matrix.html#transformPoint">Matrix.transformPoint</a>() or 
+<a href="Leap.Matrix.html#transformDirection">Matrix.transformDirection</a>() functions 
+to apply the transform.</p>
+<p>Transforms can be combined by multiplying two or more transform 
+matrices using the times function.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Vector.html#minus" ><abbr title="Leap.Vector#minus">minus</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -835,6 +868,22 @@ a different ID than that representing the finger or tool in an earlier frame.</p
 				<small><a href="#">Top</a></small>
 			</h2>
 			<dl>
+				
+				
+				<dt>
+				<a href="Leap.Matrix.html#rigidInverse" ><abbr title="Leap.Matrix#rigidInverse">rigidInverse</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Performs a matrix inverse if the matrix consists entirely of 
+rigid transformations (translations and rotations). </p>
+<p>If the matrix is not rigid, this operation will not represent an inverse.</p>
+<p>Note that all matricies that are directly returned by the API are rigid.</p>
+				</dd>
 				
 				
 				<dt>
@@ -1048,6 +1097,22 @@ screen tap gesture recognized.</p>
 				
 				
 				<dt>
+				<a href="Leap.Matrix.html#setRotation" ><abbr title="Leap.Matrix#setRotation">setRotation</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Sets this transformation matrix to represent a rotation around 
+the specified vector.</p>
+<p>This function erases any previous rotation and scale transforms 
+applied to this matrix, but does not affect translation.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.SwipeGesture.html" ><abbr title="Leap.SwipeGesture">SwipeGesture</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -1079,6 +1144,20 @@ screen tap gesture recognized.</p>
 				
 				
 				<dt>
+				<a href="Leap.Matrix.html#times" ><abbr title="Leap.Matrix#times">times</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Multiply transform matrices.</p>
+<p>Combines two transformations into a single equivalent transformation.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Vector.html#toArray" ><abbr title="Leap.Vector#toArray">toArray</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -1088,6 +1167,34 @@ screen tap gesture recognized.</p>
 				</dt>
 				<dd>
 					<p>Returns the vector as a float array.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Matrix.html#toArray3x3" ><abbr title="Leap.Matrix#toArray3x3">toArray3x3</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Writes the 3x3 Matrix object to a 9 element row-major float array. </p>
+<p>Translation factors are discarded.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Matrix.html#toArray4x4" ><abbr title="Leap.Matrix#toArray4x4">toArray4x4</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Convert a 4x4 Matrix object to a 16 element row-major float array. </p>
+<p>Translation factors are discarded.</p>
 				</dd>
 				
 				
@@ -1139,6 +1246,19 @@ different ID than that representing the tool in an earlier frame.</p>
 				
 				
 				<dt>
+				<a href="Leap.Matrix.html#toString" ><abbr title="Leap.Matrix#toString">toString</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Write the matrix to a string in a human readable format.</p>
+				</dd>
+				
+				
+				<dt>
 				<a href="Leap.Pointable.html#toString" ><abbr title="Leap.Pointable#toString">toString</abbr></a>
 				
 				&nbsp;&mdash;&nbsp;
@@ -1163,6 +1283,35 @@ object.</p>
 				<dd>
 					<p>Returns a string containing this vector in a human readable 
 format: (x, y, z).</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Matrix.html#transformDirection" ><abbr title="Leap.Matrix#transformDirection">transformDirection</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Transforms a vector with this matrix by transforming its 
+rotation and scale only.</p>
+				</dd>
+				
+				
+				<dt>
+				<a href="Leap.Matrix.html#transformPoint" ><abbr title="Leap.Matrix#transformPoint">transformPoint</abbr></a>
+				
+				&nbsp;&mdash;&nbsp;
+				<em>
+					public  method in class <a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>
+				</em>
+				</dt>
+				<dd>
+					<p>Transforms a vector with this matrix by transforming its 
+rotation, scale, and translation. </p>
+<p>Translation is applied after rotation and scale.</p>
 				</dd>
 				
 				

@@ -184,7 +184,7 @@ progressed far enough for the recognizer to classify it as a circle.</li>
 						<td><p>The Controller class is your main interface to the Leap Motion Controller.</p>
 <p>Create an instance of this Controller class to access frames of tracking data 
 and configuration information. Frame data can be polled at any time using the 
-<a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function. Call frame() or frame(0) to get the most recent 
+<a href="Leap.Controller.html#frame">Controller.frame</a>() function. Call frame() or frame(0) to get the most recent 
 frame. Set the history parameter to a positive integer to access previous frames. 
 A controller stores up to 60 frames in its frame history.</p>
 <p>Polling is an appropriate strategy for applications which already have an 
@@ -201,7 +201,7 @@ intrinsic update loop, such as a game.</p></td>
 in a single frame.</p>
 <p>The Leap detects hands, fingers and tools within the tracking area, reporting
 their positions, orientations and motions in frames at the Leap frame rate.</p>
-<p>Access Frame objects using the <a href="Leap.Controller.html#frame">Leap.Controller#frame</a>() function.</p></td>
+<p>Access Frame objects using the <a href="Leap.Controller.html#frame">Controller.frame</a>() function.</p></td>
 					</tr>
 					
 					<tr>
@@ -261,7 +261,7 @@ valid tracking data and do not correspond to a physical entity. Invalid Hand
 objects can be the result of asking for a Hand object using an ID from an
 earlier frame when no Hand objects with that ID exist in the current frame.
 A Hand object created from the Hand constructor is also invalid.
-Test for validity with the <a href="Leap.Hand.html#valid">Leap.Hand#valid</a> property.</p></td>
+Test for validity with the <a href="Leap.Hand.html#valid">Hand.valid</a> property.</p></td>
 					</tr>
 					
 					<tr>
@@ -278,6 +278,22 @@ tapping. The tapping finger must pause briefly before beginning the tap.</p>
 <p>Key tap gestures are discrete. The KeyTapGesture object representing a tap always
 has the state, STATE_STOP. Only one KeyTapGesture object is created for each
 key tap gesture recognized.</p></td>
+					</tr>
+					
+					<tr>
+						<td>
+							
+							<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Matrix</abbr></a>
+							
+						</td>
+						<td><p>The Matrix struct represents a transformation matrix. </p>
+<p>To use this object to transform a Vector, construct a matrix 
+containing the desired transformation and then use the 
+<a href="Leap.Matrix.html#transformPoint">Matrix.transformPoint</a>() or 
+<a href="Leap.Matrix.html#transformDirection">Matrix.transformDirection</a>() functions 
+to apply the transform.</p>
+<p>Transforms can be combined by multiplying two or more transform 
+matrices using the times function.</p></td>
 					</tr>
 					
 					<tr>

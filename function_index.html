@@ -150,6 +150,27 @@ determined by the right-hand rule. Thus A.cross(B) == -B.cross(A).</p>
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#compare">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#compare">
+								<strong><a href="Leap.Matrix.html#compare" ><abbr title="Leap.Matrix#compare">compare</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Compare Matrix equality component-wise.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno275">matrix.js</a> at line 275
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Vector#compare">
 								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
 							</abbr>
@@ -617,6 +638,30 @@ a different ID than that representing the finger or tool in an earlier frame.</p
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#rigidInverse">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#rigidInverse">
+								<strong><a href="Leap.Matrix.html#rigidInverse" ><abbr title="Leap.Matrix#rigidInverse">rigidInverse</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Performs a matrix inverse if the matrix consists entirely of 
+rigid transformations (translations and rotations). </p>
+<p>If the matrix is not rigid, this operation will not represent an inverse.</p>
+<p>Note that all matricies that are directly returned by the API are rigid.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno185">matrix.js</a> at line 185
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Vector#roll">
 								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
 							</abbr>
@@ -863,6 +908,52 @@ are invalid Frame objects, then this method returns 1.0.</p></td>
 					
 					<tr>
 						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#setRotation">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#setRotation">
+								<strong><a href="Leap.Matrix.html#setRotation" ><abbr title="Leap.Matrix#setRotation">setRotation</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Sets this transformation matrix to represent a rotation around 
+the specified vector.</p>
+<p>This function erases any previous rotation and scale transforms 
+applied to this matrix, but does not affect translation.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno112">matrix.js</a> at line 112
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#times">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#times">
+								<strong><a href="Leap.Matrix.html#times" ><abbr title="Leap.Matrix#times">times</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Multiply transform matrices.</p>
+<p>Combines two transformations into a single equivalent transformation.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno166">matrix.js</a> at line 166
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
 							<abbr title="Leap.Vector#toArray">
 								<a href="Leap.Vector.html" ><abbr title="Leap.Vector">Leap.Vector</abbr></a>.
 							</abbr>
@@ -877,6 +968,50 @@ are invalid Frame objects, then this method returns 1.0.</p></td>
 							<div class="location">
 							
 								<a href="lib_vector_js.html#lineno320">vector.js</a> at line 320
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#toArray3x3">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#toArray3x3">
+								<strong><a href="Leap.Matrix.html#toArray3x3" ><abbr title="Leap.Matrix#toArray3x3">toArray3x3</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Writes the 3x3 Matrix object to a 9 element row-major float array. </p>
+<p>Translation factors are discarded.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno206">matrix.js</a> at line 206
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#toArray4x4">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#toArray4x4">
+								<strong><a href="Leap.Matrix.html#toArray4x4" ><abbr title="Leap.Matrix#toArray4x4">toArray4x4</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Convert a 4x4 Matrix object to a 16 element row-major float array. </p>
+<p>Translation factors are discarded.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno230">matrix.js</a> at line 230
 							
 							</div> 
 						</td>
@@ -919,6 +1054,27 @@ are invalid Frame objects, then this method returns 1.0.</p></td>
 							<div class="location">
 							
 								<a href="lib_hand_js.html#lineno317">hand.js</a> at line 317
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#toString">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#toString">
+								<strong><a href="Leap.Matrix.html#toString" ><abbr title="Leap.Matrix#toString">toString</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Write the matrix to a string in a human readable format.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno261">matrix.js</a> at line 261
 							
 							</div> 
 						</td>
@@ -992,6 +1148,51 @@ different ID than that representing the tool in an earlier frame.</p></td>
 							<div class="location">
 							
 								<a href="lib_frame_js.html#lineno148">frame.js</a> at line 148
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#transformDirection">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#transformDirection">
+								<strong><a href="Leap.Matrix.html#transformDirection" ><abbr title="Leap.Matrix#transformDirection">transformDirection</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Transforms a vector with this matrix by transforming its 
+rotation and scale only.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno150">matrix.js</a> at line 150
+							
+							</div> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align:right;">
+							<abbr title="Leap.Matrix#transformPoint">
+								<a href="Leap.Matrix.html" ><abbr title="Leap.Matrix">Leap.Matrix</abbr></a>.
+							</abbr>
+					  </td>
+					  <td>
+							<abbr title="Leap.Matrix#transformPoint">
+								<strong><a href="Leap.Matrix.html#transformPoint" ><abbr title="Leap.Matrix#transformPoint">transformPoint</abbr></a></strong>
+							</abbr>
+						</td>
+						<td><p>Transforms a vector with this matrix by transforming its 
+rotation, scale, and translation. </p>
+<p>Translation is applied after rotation and scale.</p></td>
+						<td width="15%">
+							<div class="location">
+							
+								<a href="lib_matrix_js.html#lineno135">matrix.js</a> at line 135
 							
 							</div> 
 						</td>

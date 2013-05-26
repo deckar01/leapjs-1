@@ -40,6 +40,12 @@ var tree = [
 	]
 ]
 , [
+	"Matrix", 
+	"Leap.Matrix.html", "", [
+  
+	]
+]
+, [
 	"Pointable", 
 	"Leap.Pointable.html", "", [
   
